@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>TI-BASIC Programming: Create Your First TI-84 Calculator App | TI 84 Calculator Online</title>
+    <meta name="description" content="Learn TI-BASIC programming for the TI-84 Plus CE with our step-by-step guide. Create your first calculator app, master variables, loops, and conditionals—no coding experience required!">
+    <meta name="keywords" content="TI-BASIC Programming, TI-84 Plus CE App, TI-BASIC for Beginners, TI-84 Programming Guide, Create TI-BASIC App">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TI 84 Calculator Online">
+
+    <!-- Schema.org HowTo 结构化数据 - 适配SEO教程收录 -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "TI-BASIC Programming: Creating Your First Calculator App for TI-84 Plus CE",
+  "description": "Step-by-step guide to learning TI-BASIC programming and building your first custom app for the TI-84 Plus CE graphing calculator—no prior coding experience needed.",
+  "tools": [
+    {
+      "@type": "HowToTool",
+      "name": "TI-84 Plus CE Graphing Calculator (Physical or Free Online Emulator)"
+    }
+  ],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": ["student", "beginner programmer", "math educator"]
+  },
+  "url": "https://ti84calculatorapp.com/ti-basic-programming-first-app.html",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Access the TI-BASIC Programming Menu",
+      "text": "Open the PRGM button on your TI-84 Plus CE, select NEW, and name your first program using the alpha keyboard."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Write Your First TI-BASIC Program",
+      "text": "Create a practical Circle Area Calculator program to learn core TI-BASIC commands like ClrHome, Disp, Input, and math operations."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Save and Run Your TI-BASIC App",
+      "text": "Exit the programming editor, select your program from the PRGM menu, and run it to test the calculator functionality with a sample radius."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Master Core TI-BASIC Concepts",
+      "text": "Learn variables, input/output commands, conditional statements (If/Then/End), and loops (Repeat/While/For) to expand your app functionality."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Debug Common TI-BASIC Errors",
+      "text": "Troubleshoot syntax errors, logic errors, and frozen programs with simple fixes for beginner TI-BASIC programmers."
+    }
+  ]
+}
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* ========== 头部导航 - 与站点所有页面统一 ========== */
+        .site-header{
+            position:sticky;
+            top:0;
+            background:#fff;
+            border-bottom:1px solid #e5e7eb;
+            z-index:1000;
+        }
+        .nav-container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 16px;
+            height:64px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .logo a{
+            font-size:18px;
+            font-weight:700;
+            color:#111827;
+            text-decoration: none;
+        }
+        .main-nav{
+            display:flex;
+            gap:18px;
+        }
+        .main-nav a{
+            font-size:14px;
+            color:#374151;
+            text-decoration: none;
+        }
+        .main-nav a:hover{color:#2563eb}
+        .main-nav a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .nav-cta a{
+            background:#2563eb;
+            color:#fff;
+            padding:8px 16px;
+            border-radius:6px;
+            font-size:14px;
+            text-decoration: none;
+        }
+        /* 移动端菜单 */
+        .menu-toggle{
+            display:none;
+            font-size:22px;
+            cursor:pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        /* ========== 博客标题区 - 与系列博客页统一 ========== */
+        .blog-hero {
+            padding: 60px 20px;
+            background: #f8fafc;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .blog-hero h1 {
+            font-size: 2.2em;
+            color: #000;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-hero p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+        .blog-meta .category {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* ========== 博客主内容+侧边栏布局 ========== */
+        .blog-content {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        /* ========== 侧边栏 - 与博客列表/系列详情页统一 ========== */
+        .blog-sidebar {
+            padding: 0 10px;
+            align-self: flex-start;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        .sidebar-widget {
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .sidebar-widget h3 {
+            font-size: 1.2em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .category-list {
+            list-style: none;
+        }
+        .category-list li {
+            margin-bottom: 12px;
+        }
+        .category-list a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .category-list a:hover {
+            color: #2563eb;
+        }
+        .category-list a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .recent-posts {
+            list-style: none;
+        }
+        .recent-posts li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .recent-posts li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .recent-posts a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .recent-posts a:hover {
+            color: #2563eb;
+        }
+        .recent-posts .post-date {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+        .sidebar-cta {
+            background: #2563eb;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .sidebar-cta h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .sidebar-cta a {
+            display: inline-block;
+            margin-top: 15px;
+            background: #fff;
+            color: #2563eb;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-cta a:hover {
+            background: #f1f5f9;
+        }
+
+        /* ========== 博客正文样式 ========== */
+        .blog-main {
+            max-width: 800px;
+        }
+        .blog-content-block {
+            margin-bottom: 40px;
+        }
+        .blog-content-block h2 {
+            font-size: 1.8em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .blog-content-block h3 {
+            font-size: 1.4em;
+            color: #000;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+        .blog-content-block p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .blog-content-block ul, .blog-content-block ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .blog-content-block li {
+            margin-bottom: 10px;
+        }
+        /* TI-BASIC代码块样式 - 适配计算器代码展示 */
+        .ti-basic-code {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 20px 0;
+            overflow-x: auto;
+            border: 1px solid #e0e0e0;
+        }
+        /* 代码解释表格样式 */
+        .code-explain-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        .code-explain-table th, .code-explain-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .code-explain-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #000;
+        }
+        .code-explain-table tr:last-child td {
+            border-bottom: none;
+        }
+        /* 提示框/示例框 */
+        .tip-box {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2563eb;
+        }
+        .tip-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        /* 调试/注意框 */
+        .note-box {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .note-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        /* 内链样式 - 统一站点内链视觉 */
+        .blog-main a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .blog-main a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== 博客底部CTA + 相关文章 ========== */
+        .blog-cta {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .blog-cta h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .blog-cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .blog-cta-button {
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .cta-primary {
+            background: #2563eb;
+            color: #fff;
+        }
+        .cta-primary:hover {
+            background: #1d4ed8;
+        }
+        .cta-secondary {
+            background: #fff;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+        .cta-secondary:hover {
+            background: #f8fafc;
+        }
+        .related-posts {
+            margin-top: 60px;
+        }
+        .related-posts h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .related-post-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .related-post-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .related-post-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .related-post-content {
+            padding: 20px;
+        }
+        .related-post-category {
+            font-size: 0.9em;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .related-post-title {
+            font-size: 1.1em;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .related-post-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .related-post-title a:hover {
+            color: #2563eb;
+        }
+        .related-post-excerpt {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========== 页脚 - 与站点所有页面统一 ========== */
+        .site-footer{
+            background:#0f172a;
+            color:#cbd5f5;
+            margin-top: 60px;
+        }
+        .footer-container{
+            max-width:1200px;
+            margin:auto;
+            padding:48px 20px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:32px;
+        }
+        .footer-col h4{
+            font-size:14px;
+            color:#fff;
+            margin-bottom:12px;
+        }
+        .footer-col a{
+            display:block;
+            font-size:13px;
+            color:#cbd5f5;
+            margin-bottom:8px;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: #2563eb;
+        }
+        .footer-col p{
+            font-size:12px;
+            color:#94a3b8;
+            line-height:1.6;
+        }
+        .footer-bottom{
+            border-top:1px solid #1e293b;
+            text-align:center;
+            font-size:12px;
+            padding:16px;
+            color:#94a3b8;
+        }
+
+        /* ========== 移动端响应式适配 - 768px以下 ========== */
+        @media (max-width: 768px) {
+            /* 导航 */
+            .main-nav {
+                display:none;
+                position:absolute;
+                top:64px;
+                left:0;
+                right:0;
+                background:#fff;
+                flex-direction:column;
+                padding:20px;
+                gap:10px;
+                border-bottom:1px solid #e5e7eb;
+            }
+            .main-nav.active {
+                display:flex;
+            }
+            .menu-toggle{
+                display:block;
+            }
+            /* 博客布局 */
+            .blog-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .blog-sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+            /* 博客标题 */
+            .blog-hero h1 {
+                font-size: 1.8em;
+            }
+            /* 正文 */
+            .blog-content-block h2 {
+                font-size: 1.5em;
+            }
+            .blog-content-block h3 {
+                font-size: 1.2em;
+            }
+            /* 相关文章 */
+            .related-posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== 小屏适配 - 480px以下 ========== */
+        @media (max-width: 480px) {
+            .blog-hero {
+                padding: 40px 15px;
+            }
+            .blog-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .blog-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            .ti-basic-code {
+                font-size: 12px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <!-- 头部导航 - 与站点统一，BLOG标为active -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo"><a href="/">TI 84 Calculator Online</a></div>
+            <nav class="main-nav" id="mainNav">
+                <a href="./ti-84-calculator.html">TI-84 Calculator</a>   
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html" class="active">BLOG</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="./ti-84-calculator.html">Start Calculator</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- 博客标题区 - 含标题、描述、元信息（分类/日期） -->
+    <section class="blog-hero">
+        <h1>TI-BASIC Programming: Creating Your First Calculator App</h1>
+        <p>Discover the basics of TI-BASIC programming and create your first simple app for the TI-84 Plus CE. Master variables, input/output commands, loops, and conditionals to automate calculations and solve problems faster.</p>
+        <div class="blog-meta">
+            <span class="category">Programming (TI-BASIC)</span>
+            <span class="date">October 8, 2025</span>
+        </div>
+    </section>
+
+    <!-- 博客主内容+侧边栏 -->
+    <div class="blog-content">
+        <!-- 侧边栏 - 分类（当前分类active）+ 最新文章 + 快捷CTA -->
+        <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="./blog.html">All Posts</a></li>
+                    <li><a href="#">Getting Started</a></li>
+                    <li><a href="#">Graphing Functions</a></li>
+                    <li><a href="#">Statistical Analysis</a></li>
+                    <li><a href="#" class="active">Programming (TI-BASIC)</a></li>
+                    <li><a href="#">Troubleshooting</a></li>
+                    <li><a href="#">Exam Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a>
+                        <span class="post-date">October 8, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a>
+                        <span class="post-date">October 15, 2025</span>
+                    </li>
+                    <li>
+                        <a href="#">Mastering Statistical Regression on TI-84</a>
+                        <span class="post-date">September 29, 2025</span>
+                    </li>
+                    <li>
+                        <a href="#">TI-84 Plus CE Tips for SAT & ACT Exams</a>
+                        <span class="post-date">September 18, 2025</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-cta">
+                <h4>Try TI-BASIC Now</h4>
+                <p>Write your first app with our free online TI-84 Plus CE emulator—no hardware required!</p>
+                <a href="./ti-84-calculator.html">Open Online Calculator</a>
+            </div>
+        </aside>
+
+        <!-- 博客正文核心内容 -->
+        <main class="blog-main">
+            <div class="blog-content-block">
+                <p>If you’ve ever used a TI-84 Plus CE graphing calculator, you know it’s far more than a tool for basic arithmetic, graphing, or stats—it’s a portable, beginner-friendly programming platform. TI-BASIC, the calculator’s built-in programming language, is designed to align with the TI-84’s physical keys and core functions, making it the perfect first coding language for students, teachers, or anyone looking to automate repetitive math tasks. Best of all, <strong>no prior coding experience is required</strong> to get started.</p>
+                <p>In this step-by-step guide, we’ll walk you through everything you need to create your first TI-BASIC app—a practical circle area calculator—then expand into core programming concepts like variables, input/output, conditionals, and loops. You’ll use the same logic on a physical TI-84 Plus CE or our <a href="./ti-84-calculator.html">free online TI-84 emulator</a> (we recommend the emulator for easy testing!).</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>What Is TI-BASIC?</h2>
+                <p>TI-BASIC is a simplified, interpreted programming language exclusive to Texas Instruments graphing calculators (including the TI-83, TI-84, and TI-Nspire series). Unlike complex languages like Python or C++, it’s optimized for the TI-84’s limited processing power and small screen, with syntax that directly maps to the calculator’s buttons and built-in functions.</p>
+                <p>TI-BASIC is ideal for calculator-scale projects because it’s:</p>
+                <ul>
+                    <li><strong>Native</strong>: No downloads, setup, or additional hardware—built right into every TI-84 Plus CE.</li>
+                    <li><strong>Intuitive</strong>: Commands match calculator keystrokes (e.g., the π key in TI-BASIC is the same as the physical π key).</li>
+                    <li><strong>Practical</strong>: Perfect for automating homework, building study tools, creating simple games, or custom math calculators.</li>
+                    <li><strong>Beginner-friendly</strong>: No variable declaration, type checking, or complex syntax rules.</li>
+                </ul>
+                <div class="tip-box">
+                    <h4>TI-BASIC vs. Other Languages</h4>
+                    <p>TI-BASIC isn’t meant for large-scale programming, but it’s a fantastic introduction to coding logic. The concepts you learn here—loops, conditionals, input/output—will translate directly to other programming languages like Python and JavaScript.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Prerequisites to Get Started</h2>
+                <p>You only need two things to follow this guide—no coding experience required:</p>
+                <ol>
+                    <li>A <strong>TI-84 Plus CE graphing calculator</strong> (physical) or our <a href="./ti-84-calculator.html">free online TI-84 Plus CE emulator</a> (we recommend the emulator for beginners).</li>
+                    <li>Basic familiarity with the TI-84’s core buttons: PRGM, ALPHA, STO&gt;, 2nd, and the arrow keys (our <a href="./guide.html">TI-84 Guide page</a> has a full button reference if you need it).</li>
+                </ol>
+                <p>We’ll reference the physical calculator’s button labels throughout—these map exactly to the on-screen buttons in our online emulator.</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 1: Access the TI-BASIC Programming Menu</h2>
+                <p>First, you’ll navigate to the TI-84’s built-in programming editor to create a new program. This process is identical on physical calculators and our online emulator:</p>
+                <ol>
+                    <li>Press the <strong>PRGM</strong> button (located below the STAT button on the TI-84’s keypad).</li>
+                    <li>Use the arrow keys to select <strong>NEW</strong> (option 1) and press <strong>ENTER</strong>.</li>
+                    <li>Name your program (e.g., "CIRCLEAREA"):
+                        <ul>
+                            <li>Press <strong>ALPHA</strong> to type letters (hold ALPHA for single uppercase letters, or press ALPHA twice to lock alpha mode).</li>
+                            <li>Use the number keys (1=A, 2=B, 3=C, etc.) to type characters—this is the TI-84’s alpha keyboard.</li>
+                            <li>Press <strong>ENTER</strong> to confirm the name—you’ll enter the programming editor (a blank screen with a colon <code>:</code> prompt at the start of each line).</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>The colon <code>:</code> is added automatically by the calculator—it marks the start of a new TI-BASIC command and ensures proper syntax.</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 2: Write Your First TI-BASIC App (Circle Area Calculator)</h2>
+                <p>We’ll build a <strong>practical circle area calculator</strong> for your first app—this teaches core TI-BASIC commands in one simple, useful project. The app will prompt the user for a radius, calculate the area (πr²), and display the result—exactly the kind of tool you’d use for math homework or exams.</p>
+                <p>Type the code line-by-line in the programming editor (each line starts with an auto-added colon):</p>
+                <div class="ti-basic-code">
+:ClrHome
+:Disp "CIRCLE AREA CALC"
+:Disp "ENTER RADIUS:"
+:Input R
+:π*R²→A
+:Disp "AREA =",A
+:Pause
+:ClrHome
+                </div>
+                <p>Don’t worry if you don’t understand every line yet—we’ll break down each command in detail below.</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 3: Break Down Your First TI-BASIC Code</h2>
+                <p>Every line in your circle area calculator serves a specific purpose. The table below explains each command, including which calculator buttons to use for special characters (like π and →):</p>
+                <table class="code-explain-table">
+                    <thead>
+                        <tr>
+                            <th>TI-BASIC Command</th>
+                            <th>What It Does</th>
+                            <th>Calculator Button Tip</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>:ClrHome</td>
+                            <td>Clears the calculator’s home screen to keep output clean—<strong>always start programs with this!</strong></td>
+                            <td>2nd + CLEAR</td>
+                        </tr>
+                        <tr>
+                            <td>:Disp "TEXT"</td>
+                            <td>Prints static text to the screen (quotes are required for text).</td>
+                            <td>PRGM → I/O → 3:Disp</td>
+                        </tr>
+                        <tr>
+                            <td>:Input R</td>
+                            <td>Prompts the user to enter a value and stores it in the variable <code>R</code> (radius).</td>
+                            <td>PRGM → I/O → 1:Input</td>
+                        </tr>
+                        <tr>
+                            <td>:π*R²→A</td>
+                            <td>Calculates the circle area (π × radius²) and stores the result in variable <code>A</code> (area).</td>
+                            <td>π = 2nd + ^; → = STO&gt;; ² = x²</td>
+                        </tr>
+                        <tr>
+                            <td>:Disp "AREA =",A</td>
+                            <td>Prints "AREA =" followed by the numerical value stored in <code>A</code>.</td>
+                            <td>PRGM → I/O → 3:Disp (comma = , key)</td>
+                        </tr>
+                        <tr>
+                            <td>:Pause</td>
+                            <td>Stops the program so the user can view the result (press ENTER to resume).</td>
+                            <td>PRGM → CONTROL → 1:Pause</td>
+                        </tr>
+                        <tr>
+                            <td>:ClrHome</td>
+                            <td>Cleans the screen again when the program ends for a clean user experience.</td>
+                            <td>2nd + CLEAR</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 4: Save and Run Your TI-BASIC App</h2>
+                <p>One of the best things about TI-BASIC is that it <strong>auto-saves your code</strong> as you type—there’s no "save" button to press! To run your circle area calculator:</p>
+                <ol>
+                    <li>Press <strong>2nd + MODE</strong> (QUIT) to exit the programming editor and return to the TI-84’s home screen.</li>
+                    <li>Press <strong>PRGM</strong> again—your program (e.g., "CIRCLEAREA") will appear in the "EXEC" (execute) list.</li>
+                    <li>Select your program with the arrow keys and press <strong>ENTER twice</strong> to launch it.</li>
+                    <li>Follow the on-screen prompt: enter a radius (e.g., 5) and press <strong>ENTER</strong>—you’ll see the calculated area (≈78.54)!</li>
+                </ol>
+                <div class="tip-box">
+                    <h4>Test With Different Values</h4>
+                    <p>Try running the program with a radius of 3 (area ≈28.27) or 10 (area ≈314.16) to confirm it works. If you get an error, jump to our debugging section below!</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Core TI-BASIC Concepts to Master Next</h2>
+                <p>Now that you’ve built your first app, let’s expand into the foundational TI-BASIC concepts that will let you build more complex programs. These are the building blocks for every TI-BASIC project—from custom calculators to simple games.</p>
+
+                <h3>1. Variables in TI-BASIC</h3>
+                <p>TI-BASIC uses <strong>untyped, single-character variables</strong>—no need to declare "integer" or "float" like in other languages. They’re easy to use and perfect for calculator-scale projects:</p>
+                <ul>
+                    <li>Use any letter A-Z or θ (theta, 2nd + 0) for variable names.</li>
+                    <li>Variables are <strong>case-insensitive</strong> (A = a, R = r—TI-BASIC only uses uppercase).</li>
+                    <li>Store values with the → (STO&gt;) button: <code>7→X</code> stores 7 in X; <code>X+4→Y</code> sets Y to 11.</li>
+                    <li>Variables retain their values until you overwrite them or clear the calculator’s memory (2nd + + → 4:ClrAllLists).</li>
+                </ul>
+
+                <h3>2. Essential Input/Output (I/O) Commands</h3>
+                <p>Your app needs to interact with the user—beyond <code>Disp</code> and <code>Input</code>, these TI-BASIC I/O commands are critical for building user-friendly programs:</p>
+                <ul>
+                    <li><code>Prompt R</code>: Shorter than <code>Input</code>—displays <code>R?</code> and waits for input (great for quick prompts).</li>
+                    <li><code>Output(row, col, text/value)</code>: Prints content at a specific screen position (e.g., <code>Output(3,2,"HELLO")</code> prints "HELLO" on row 3, column 2)—perfect for games and formatted output.</li>
+                    <li><code>GetKey→K</code>: Reads a user’s key press and stores the key’s numeric code in K (essential for games like Snake or Tic-Tac-Toe).</li>
+                </ul>
+
+                <h3>3. Conditional Statements (If/Then/End)</h3>
+                <p>Conditionals let your program "make decisions" based on user input or calculations—for example, checking if a radius is negative (invalid) and showing an error. The core syntax is <code>If/Then/End</code>:</p>
+                <div class="ti-basic-code">
+:ClrHome
+:Input R
+:If R < 0
+:Then
+:Disp "INVALID RADIUS!"
+:Pause
+:Stop
+:End
+:π*R²→A
+:Disp "AREA =",A
+:Pause
+:ClrHome
+                </div>
+                <p>This modified circle area calculator checks if the radius is negative—if so, it displays an error, pauses, and stops the program (no invalid calculations!).</p>
+
+                <h3>4. Loops (Repeat/While/For)</h3>
+                <p>Loops let you repeat code over and over—critical for games, repetitive calculations, or flashcard apps. TI-BASIC has three easy-to-use loops; we’ll start with the <strong>Repeat loop</strong> (simplest for beginners):</p>
+                <p><strong>Example: Number Guesser Game (Repeat Loop)</strong></p>
+                <div class="ti-basic-code">
+:ClrHome
+:randInt(1,10)→G
+:Disp "GUESS 1-10!"
+:Repeat N = G
+:Input N
+:If N < G:Disp "TOO LOW!"
+:If N > G:Disp "TOO HIGH!"
+:End
+:Disp "CORRECT!"
+:Pause
+:ClrHome
+                </div>
+                <p>How it works: <code>randInt(1,10)→G</code> generates a random number 1-10 for the user to guess. The <code>Repeat N = G</code> line repeats the code until the user’s guess (<code>N</code>) matches the random number (<code>G</code>).</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Debugging TI-BASIC Programs (Fix Common Errors)</h2>
+                <p>Every programmer makes errors—even experienced TI-BASIC developers! Here’s how to fix the three most common issues beginners face, with simple step-by-step solutions:</p>
+                <div class="note-box">
+                    <h4>Pro Tip: Debugging Shortcut</h4>
+                    <p>If your program freezes or crashes, press the <strong>ON</strong> button to break out of it—this won’t delete your code, so you can fix it and re-run!</p>
+                </div>
+                <ol>
+                    <li>
+                        <strong>Syntax Errors</strong> (calculator highlights the faulty line):
+                        <ul>
+                            <li>Check for missing <code>End</code> commands (required for If/Then and loops).</li>
+                            <li>Ensure text is wrapped in quotes (e.g., <code>Disp CIRCLE</code> is invalid—use <code>Disp "CIRCLE"</code>).</li>
+                            <li>Verify you used the TI-84’s built-in keys for symbols (π, →, ²) instead of typing them manually.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Logic Errors</strong> (program runs but gives wrong results):
+                        <ul>
+                            <li>Double-check variable names (e.g., using <code>r</code> instead of <code>R</code>—TI-BASIC is uppercase only).</li>
+                            <li>Verify math operations (e.g., <code>R*2</code> instead of <code>R²</code> for squaring).</li>
+                            <li>Check loop/conditional conditions (e.g., <code>N > G</code> instead of <code>N < G</code> for "too low" prompts).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Frozen Programs</strong> (infinite loops):
+                        <ul>
+                            <li>Press <strong>ON</strong> to exit the frozen program.</li>
+                            <li>Check your loop condition—ensure it can eventually be true (e.g., <code>Repeat X = 5</code> will freeze if X is never set to 5).</li>
+                            <li>Simplify the loop code and test line-by-line to find the issue.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Next Steps: Build More Advanced TI-BASIC Apps</h2>
+                <p>Now that you’ve mastered the basics, put your skills to the test with these practical TI-BASIC projects—they’re perfect for practicing what you’ve learned and building useful tools for school or fun:</p>
+                <ul>
+                    <li><strong>Geometry Toolkit</strong>: Expand your circle calculator to include perimeter, sphere volume, and triangle area (use the Pythagorean theorem!).</li>
+                    <li><strong>Math Flashcard App</strong>: Create a program that quizzes you on multiplication, quadratic equations, or trig identities (use <code>Random</code> for different questions).</li>
+                    <li><strong>Unit Converter</strong>: Build a tool to convert inches to centimeters, pounds to kilograms, or Celsius to Fahrenheit (store conversion factors in variables).</li>
+                    <li><strong>Simple Game</strong>: Upgrade the number guesser game to 1-20, or build a Tic-Tac-Toe game with <code>Output</code> and <code>GetKey</code>.</li>
+                    <li><strong>Homework Helper</strong>: Automate solving systems of linear equations or calculating slope/intercept from two points.</li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Where to Learn More TI-BASIC Programming</h2>
+                <p>Ready to level up your TI-BASIC skills? These free resources will help you master advanced commands and build complex projects:</p>
+                <ul>
+                    <li><strong>TI’s Official TI-BASIC Guide</strong>: Texas Instruments’ free manual with all TI-BASIC commands, syntax, and examples (tailored for the TI-84 Plus CE).</li>
+                    <li><strong>TI-BASIC Developer</strong>: A community-driven site with tutorials, code snippets, game projects, and advanced tips for all TI calculators.</li>
+                    <li><strong>Our TI-84 Guide Page</strong>: <a href="./guide.html">Our step-by-step TI-84 Guide</a> includes advanced TI-BASIC commands and calculator button references.</li>
+                    <li><strong>Our TI-84 Blog</strong>: Check back on <a href="./blog.html">our BLOG</a> for more TI-BASIC tutorials, project ideas, and calculator tips.</li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Final Thoughts</h2>
+                <p>TI-BASIC programming is a fantastic way to learn coding logic—especially for students who use the TI-84 Plus CE every day for math and science. What makes it so powerful is its practicality: you’re not just learning to code—you’re building tools that solve real problems, automate homework, and make your calculator work <em>for you</em>.</p>
+                <p>Your first circle area calculator is just the start. As you experiment with variables, loops, and conditionals, you’ll realize how much you can customize your TI-84 Plus CE—whether you’re building a study tool, a game, or a custom math calculator. And remember: errors are part of learning—every mistake is a chance to understand TI-BASIC better.</p>
+                <p>The best way to learn is to <strong>experiment</strong>—tweak your existing code, try new commands, and build small projects every day. You’ll be writing complex TI-BASIC apps in no time!</p>
+            </div>
+
+            <!-- 博客底部CTA - 引导用户使用在线模拟器/查看博客首页 -->
+            <div class="blog-cta">
+                <h3>Ready to Build Your Next TI-BASIC App?</h3>
+                <p>Test your TI-BASIC code right now with our free online TI-84 Plus CE emulator—no hardware required!</p>
+                <div class="blog-cta-buttons">
+                    <a href="./ti-84-calculator.html" class="blog-cta-button cta-primary">Open Online TI-84 Calculator</a>
+                    <a href="./blog.html" class="blog-cta-button cta-secondary">View All Blog Posts</a>
+                </div>
+            </div>
+
+            <!-- 相关文章 - 关联博客系列内容，提升内链权重 -->
+            <div class="related-posts">
+                <h3>Related TI-84 Guides</h3>
+                <div class="related-posts-grid">
+                    <div class="related-post-card">
+                        <img src="blog/graphing-parametric.jpg" alt="Graphing Parametric Equations on TI-84 Plus CE" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Graphing Functions</span>
+                            <h4 class="related-post-title"><a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a></h4>
+                            <p class="related-post-excerpt">Step-by-step guide to setting up, graphing, and analyzing parametric equations on your TI-84 Plus CE—includes window settings and examples.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/statistical-regression.jpg" alt="Mastering Statistical Regression on TI-84" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Statistical Analysis</span>
+                            <h4 class="related-post-title"><a href="#">Mastering Statistical Regression on TI-84</a></h4>
+                            <p class="related-post-excerpt">Learn to perform linear, quadratic, and exponential regression on the TI-84 Plus CE—including data entry and residual graphing.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/exam-tips.jpg" alt="TI-84 Plus CE Tips for SAT & ACT Exams" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Exam Tips</span>
+                            <h4 class="related-post-title"><a href="#">TI-84 Plus CE Tips for SAT & ACT Exams</a></h4>
+                            <p class="related-post-excerpt">Time-saving TI-84 tips and shortcuts for standardized tests—master the functions that will boost your SAT/ACT math score.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 - 与站点所有页面统一 -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="./ti-84-calculator.html">TI 84 Calculator</a>
+                <a href="./ti-84-plus-ce.html">Graphing Calculator</a>
+                <a href="#">AI Math Solver</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html">BLOG</a>
+            </div>
+            <div class="footer-col">
+                <h4>Disclaimer</h4>
+                <p>This is a standalone version of the official TI-84 Plus CE HTML5 emulator from Texas Instruments.</p>
+                <p>The emulator files are downloaded from TestNav, where you can also use it for free.</p>
+                <p style="margin-top: 15px;">TI-84 Plus CE is a trademark of Texas Instruments. This website is not affiliated with or endorsed by Texas Instruments.</p>
+                <p style="margin-top: 15px;"><strong>Open Source:</strong> This project is completely open source and available on GitHub. Feel free to contribute, report issues, or fork the project!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 TI 84 Calculator Online  - Free Graphing Calculator Simulator & TI-BASIC Programming Guide.
+        </div>
+    </footer>
+
+    <!-- 核心JS - 移动端菜单切换 + 基础交互 -->
+    <script>
+        // 移动端菜单切换（含aria属性优化，提升可访问性）
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            const isExpanded = nav.classList.contains('active');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        }
+
+        // 点击菜单外部关闭移动端菜单
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // 响应式窗口调整 - 大屏自动显示菜单
+        window.addEventListener('resize', function() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>TI-84 Plus CE Tips for SAT & ACT Exams | Time-Saving Shortcuts</title>
+    <meta name="description" content="Essential TI-84 Plus CE tips and shortcuts for SAT & ACT exams. Master calculator tricks for algebra, geometry, stats—boost your math score with our step-by-step guide.">
+    <meta name="keywords" content="TI-84 SAT tips, TI-84 ACT shortcuts, TI-84 Plus CE exam tricks, SAT math calculator tips, ACT TI-84 guide">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TI 84 Calculator Online">
+
+    <!-- Schema.org HowTo 结构化数据 - 适配SEO教程收录 -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "TI-84 Plus CE Tips for SAT & ACT Exams",
+  "description": "Time-saving TI-84 Plus CE tips, shortcuts, and settings for SAT and ACT math sections. Learn to solve problems faster, avoid common errors, and maximize your exam score.",
+  "tools": [
+    {
+      "@type": "HowToTool",
+      "name": "TI-84 Plus CE Graphing Calculator (Physical or Free Online Emulator)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "SAT/ACT practice math problems"
+    }
+  ],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": ["high school student", "test taker", "math tutor"]
+  },
+  "url": "https://ti84calculatorapp.com/ti-84-sat-act-exam-tips.html",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Optimize TI-84 Settings for Exams",
+      "text": "Configure decimal places, graph settings, and memory to save time during SAT/ACT math sections."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Master Essential Exam Shortcuts",
+      "text": "Learn key TI-84 shortcuts for solving algebra, geometry, and stats problems quickly."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Avoid Common Calculator Errors",
+      "text": "Fix mode mismatches, syntax errors, and memory issues that cost points on exams."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Practice Exam-Specific TI-84 Workflows",
+      "text": "Apply calculator tricks to SAT/ACT-style problems (e.g., linear equations, quadratic formula, regression)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Manage Time with Calculator Efficiency",
+      "text": "Use TI-84 features to speed up calculations without sacrificing accuracy."
+    }
+  ]
+}
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* ========== 头部导航 - 与站点所有页面统一 ========== */
+        .site-header{
+            position:sticky;
+            top:0;
+            background:#fff;
+            border-bottom:1px solid #e5e7eb;
+            z-index:1000;
+        }
+        .nav-container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 16px;
+            height:64px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .logo a{
+            font-size:18px;
+            font-weight:700;
+            color:#111827;
+            text-decoration: none;
+        }
+        .main-nav{
+            display:flex;
+            gap:18px;
+        }
+        .main-nav a{
+            font-size:14px;
+            color:#374151;
+            text-decoration: none;
+        }
+        .main-nav a:hover{color:#2563eb}
+        .main-nav a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .nav-cta a{
+            background:#2563eb;
+            color:#fff;
+            padding:8px 16px;
+            border-radius:6px;
+            font-size:14px;
+            text-decoration: none;
+        }
+        /* 移动端菜单 */
+        .menu-toggle{
+            display:none;
+            font-size:22px;
+            cursor:pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        /* ========== 博客标题区 - 与系列博客页统一 ========== */
+        .blog-hero {
+            padding: 60px 20px;
+            background: #f8fafc;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .blog-hero h1 {
+            font-size: 2.2em;
+            color: #000;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-hero p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+        .blog-meta .category {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* ========== 博客主内容+侧边栏布局 ========== */
+        .blog-content {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        /* ========== 侧边栏 - 与博客列表/系列详情页统一 ========== */
+        .blog-sidebar {
+            padding: 0 10px;
+            align-self: flex-start;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        .sidebar-widget {
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .sidebar-widget h3 {
+            font-size: 1.2em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .category-list {
+            list-style: none;
+        }
+        .category-list li {
+            margin-bottom: 12px;
+        }
+        .category-list a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .category-list a:hover {
+            color: #2563eb;
+        }
+        .category-list a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .recent-posts {
+            list-style: none;
+        }
+        .recent-posts li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .recent-posts li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .recent-posts a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .recent-posts a:hover {
+            color: #2563eb;
+        }
+        .recent-posts .post-date {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+        .sidebar-cta {
+            background: #2563eb;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .sidebar-cta h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .sidebar-cta a {
+            display: inline-block;
+            margin-top: 15px;
+            background: #fff;
+            color: #2563eb;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-cta a:hover {
+            background: #f1f5f9;
+        }
+
+        /* ========== 博客正文样式 ========== */
+        .blog-main {
+            max-width: 800px;
+        }
+        .blog-content-block {
+            margin-bottom: 40px;
+        }
+        .blog-content-block h2 {
+            font-size: 1.8em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .blog-content-block h3 {
+            font-size: 1.4em;
+            color: #000;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+        .blog-content-block p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .blog-content-block ul, .blog-content-block ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .blog-content-block li {
+            margin-bottom: 10px;
+        }
+        /* 考试技巧表格 */
+        .exam-tips-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        .exam-tips-table th, .exam-tips-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .exam-tips-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #000;
+            width: 25%;
+        }
+        /* 快捷操作代码块 */
+        .shortcut-code {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 15px 0;
+            border-left: 4px solid #2563eb;
+        }
+        /* 提示框/警告框 */
+        .tip-box {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2563eb;
+        }
+        .tip-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .warning-box {
+            background: #fff8f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #dc2626;
+        }
+        .warning-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        /* 内链样式 - 统一站点内链视觉 */
+        .blog-main a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .blog-main a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== 博客底部CTA + 相关文章 ========== */
+        .blog-cta {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .blog-cta h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .blog-cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .blog-cta-button {
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .cta-primary {
+            background: #2563eb;
+            color: #fff;
+        }
+        .cta-primary:hover {
+            background: #1d4ed8;
+        }
+        .cta-secondary {
+            background: #fff;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+        .cta-secondary:hover {
+            background: #f8fafc;
+        }
+        .related-posts {
+            margin-top: 60px;
+        }
+        .related-posts h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .related-post-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .related-post-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .related-post-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .related-post-content {
+            padding: 20px;
+        }
+        .related-post-category {
+            font-size: 0.9em;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .related-post-title {
+            font-size: 1.1em;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .related-post-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .related-post-title a:hover {
+            color: #2563eb;
+        }
+        .related-post-excerpt {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========== 页脚 - 与站点所有页面统一 ========== */
+        .site-footer{
+            background:#0f172a;
+            color:#cbd5f5;
+            margin-top: 60px;
+        }
+        .footer-container{
+            max-width:1200px;
+            margin:auto;
+            padding:48px 20px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:32px;
+        }
+        .footer-col h4{
+            font-size:14px;
+            color:#fff;
+            margin-bottom:12px;
+        }
+        .footer-col a{
+            display:block;
+            font-size:13px;
+            color:#cbd5f5;
+            margin-bottom:8px;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: #2563eb;
+        }
+        .footer-col p{
+            font-size:12px;
+            color:#94a3b8;
+            line-height:1.6;
+        }
+        .footer-bottom{
+            border-top:1px solid #1e293b;
+            text-align:center;
+            font-size:12px;
+            padding:16px;
+            color:#94a3b8;
+        }
+
+        /* ========== 移动端响应式适配 - 768px以下 ========== */
+        @media (max-width: 768px) {
+            /* 导航 */
+            .main-nav {
+                display:none;
+                position:absolute;
+                top:64px;
+                left:0;
+                right:0;
+                background:#fff;
+                flex-direction:column;
+                padding:20px;
+                gap:10px;
+                border-bottom:1px solid #e5e7eb;
+            }
+            .main-nav.active {
+                display:flex;
+            }
+            .menu-toggle{
+                display:block;
+            }
+            /* 博客布局 */
+            .blog-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .blog-sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+            /* 博客标题 */
+            .blog-hero h1 {
+                font-size: 1.8em;
+            }
+            /* 正文 */
+            .blog-content-block h2 {
+                font-size: 1.5em;
+            }
+            .blog-content-block h3 {
+                font-size: 1.2em;
+            }
+            /* 相关文章 */
+            .related-posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== 小屏适配 - 480px以下 ========== */
+        @media (max-width: 480px) {
+            .blog-hero {
+                padding: 40px 15px;
+            }
+            .blog-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .blog-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            .exam-tips-table {
+                font-size: 12px;
+            }
+            .exam-tips-table th, .exam-tips-table td {
+                padding: 8px 10px;
+            }
+            .shortcut-code {
+                font-size: 12px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <!-- 头部导航 - 与站点统一，BLOG标为active -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo"><a href="/">TI 84 Calculator Online</a></div>
+            <nav class="main-nav" id="mainNav">
+                <a href="./ti-84-calculator.html">TI-84 Calculator</a>   
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html" class="active">BLOG</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="./ti-84-calculator.html">Start Calculator</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- 博客标题区 - 含标题、描述、元信息（分类/日期） -->
+    <section class="blog-hero">
+        <h1>TI-84 Plus CE Tips for SAT & ACT Exams</h1>
+        <p>Maximize your SAT and ACT math scores with these essential TI-84 Plus CE tips, shortcuts, and settings. Save time, avoid common errors, and master calculator-dependent problems with our exam-focused guide.</p>
+        <div class="blog-meta">
+            <span class="category">Exam Tips</span>
+            <span class="date">September 18, 2025</span>
+        </div>
+    </section>
+
+    <!-- 博客主内容+侧边栏 -->
+    <div class="blog-content">
+        <!-- 侧边栏 - 分类（当前分类active）+ 最新文章 + 快捷CTA -->
+        <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="./blog.html">All Posts</a></li>
+                    <li><a href="#">Getting Started</a></li>
+                    <li><a href="#">Graphing Functions</a></li>
+                    <li><a href="#">Statistical Analysis</a></li>
+                    <li><a href="#">Programming (TI-BASIC)</a></li>
+                    <li><a href="#">Troubleshooting</a></li>
+                    <li><a href="#" class="active">Exam Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a>
+                        <span class="post-date">October 8, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a>
+                        <span class="post-date">October 15, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./mastering-statistical-regression-ti84.html">Mastering Statistical Regression on TI-84</a>
+                        <span class="post-date">September 29, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./ti-84-sat-act-exam-tips.html">TI-84 Plus CE Tips for SAT & ACT Exams</a>
+                        <span class="post-date">September 18, 2025</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-cta">
+                <h4>Practice Exam Tips Now</h4>
+                <p>Test TI-84 exam shortcuts with our free online emulator—perfect for SAT/ACT prep!</p>
+                <a href="./ti-84-calculator.html">Open Online Calculator</a>
+            </div>
+        </aside>
+
+        <!-- 博客正文核心内容 -->
+        <main class="blog-main">
+            <div class="blog-content-block">
+                <p>The TI-84 Plus CE is a game-changer for SAT and ACT math sections—when used strategically. Exams like the SAT allow calculators on 38% of math questions (Calculator Section), while the ACT permits calculators on all math questions (though some are faster to solve by hand). The right TI-84 tips can save you 10-15 minutes of valuable time, reduce calculation errors, and help you tackle complex problems that would otherwise be impossible to solve quickly.</p>
+                <p>In this guide, we’ll focus on <strong>exam-specific TI-84技巧</strong> that directly apply to SAT/ACT math topics: algebra (linear equations, quadratics), geometry (area, trigonometry), statistics (regression, probability), and time management. All tips work on both physical TI-84 Plus CE calculators and our <a href="./ti-84-calculator.html">free online emulator</a>—so you can practice anywhere, no hardware required.</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>1. Pre-Exam TI-84 Setup (5 Minutes to Save Hours)</h2>
+                <p>Configure your calculator <strong>before test day</strong> to avoid wasting time on settings during the exam. These setup steps ensure your TI-84 is optimized for SAT/ACT math:</p>
+                <ol>
+                    <li>
+                        <strong>Set Decimal Places to 4 (or Auto)</strong>:
+                        <ul>
+                            <li>Press <strong>MODE</strong> and scroll down to "FLOAT" (decimal places).</li>
+                            <li>Select "4" (or "AUTO" for automatic decimal places) and press <strong>ENTER</strong>.</li>
+                            <li>Why? SAT/ACT answers are often rounded to 1-4 decimal places—consistent settings prevent rounding errors.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Clear Unnecessary Programs/Memory</strong>:
+                        <ul>
+                            <li>Press <strong>2nd + +</strong> (MEM) → select <strong>2:Mem Mgmt/Delete</strong> → <strong>7:Prgm</strong>.</li>
+                            <li>Delete any non-essential programs (exams prohibit custom programs that solve specific problems).</li>
+                            <li>Press <strong>2nd + +</strong> → <strong>4:ClrAllLists</strong> to clear old data lists (avoids "INVALID DIM" errors).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Set Graph Settings for Quick Plots</strong>:
+                        <ul>
+                            <li>Press <strong>Y=</strong> and clear all existing functions (press <strong>CLEAR</strong> on each line).</li>
+                            <li>Press <strong>WINDOW</strong> and reset to default: Xmin=-10, Xmax=10, Ymin=-10, Ymax=10 (works for most linear/quadratic graphs).</li>
+                            <li>Why? Many SAT/ACT questions require graphing to find intersections or roots—preconfigured settings save time.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Check Battery Life</strong>:
+                        <ul>
+                            <li>Physical TI-84: Replace batteries 1-2 days before the exam (carry spare batteries if allowed).</li>
+                            <li>Online emulator: Ensure your device is charged (no battery issues—one less worry!)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="warning-box">
+                    <h4>Exam Rules to Remember</h4>
+                    <p>SAT/ACT prohibit calculators with built-in CAS (Computer Algebra System), but the TI-84 Plus CE is allowed. Avoid storing formulas or programs that automate problem-solving—proctors may confiscate your calculator.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>2. Essential TI-84 Shortcuts for SAT/ACT Math</h2>
+                <p>These shortcuts target the most common SAT/ACT math topics—memorize them to solve problems in seconds instead of minutes:</p>
+                <table class="exam-tips-table">
+                    <thead>
+                        <tr>
+                            <<th>Math Topic</</th>
+                            <<th>TI-84 Shortcut</</th>
+                            <<th>How to Use (Exam Example)</</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Linear Equations (y = ax + b)</td>
+                            <td>STAT → CALC → 4:LinReg(ax+b)</td>
+                            <td>SAT: Given two points (2,5) and (4,9), find the slope. Input into L1/L2 → run LinReg → a=2 (slope).</td>
+                        </tr>
+                        <tr>
+                            <td>Quadratic Formula (ax² + bx + c = 0)</td>
+                            <td>2nd + TRACE (CALC) → 2:Zero</td>
+                            <td>ACT: Solve x² - 5x + 6 = 0. Enter into Y1 → graph → use Zero to find roots (2 and 3) faster than manual calculation.</td>
+                        </tr>
+                        <tr>
+                            <td>Trigonometry (sin/cos/tan)</td>
+                            <td>MODE → ensure "DEGREE" mode</td>
+                            <td>SAT: Find sin(30°). Press <strong>SIN</strong> → 30 → ENTER (result: 0.5). Avoid RADIAN mode (common mistake!).</td>
+                        </tr>
+                        <tr>
+                            <td>Statistics (Mean/Median/Mode)</td>
+                            <td>STAT → 1:Edit → enter data → STAT → CALC → 1:1-Var Stats</td>
+                            <td>ACT: Find the mean of [4,6,8,10]. Enter into L1 → run 1-Var Stats → x̄=7.</td>
+                        </tr>
+                        <tr>
+                            <td>Systems of Equations (2 variables)</td>
+                            <td>2nd + MATRIX → EDIT → enter coefficients → MATRIX → MATH → 5:rref(</td>
+                            <td>SAT: Solve 2x + 3y = 12; x - y = 1. Enter matrix → rref( → solution (3,2).</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Bonus Time-Saving Shortcuts</h3>
+                <ul>
+                    <li>
+                        <strong>Quick Exponents/Roots</strong>:
+                        <div class="shortcut-code">
+Square root: 2nd + √ (e.g., √25 = 5)<br>
+Cube root: MATH → 4:∛(e.g., ∛8 = 2)<br>
+Any exponent: ^ (e.g., 2^4 = 16)
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Recall Previous Answer</strong>:
+                        <div class="shortcut-code">
+Press 2nd + (-) (ANS) to reuse the last calculation result<br>
+Example: Calculate 5×3=15 → ANS + 2 = 17
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Store Values for Reuse</strong>:
+                        <div class="shortcut-code">
+Type a value → STO→ → letter (e.g., 10→X)<br>
+Use X in calculations (e.g., X×2 = 20)
+                        </div>
+                        <p>Perfect for SAT/ACT questions with repeated values (e.g., pi ≈ 3.1416 → store as P).</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>3. Topic-Specific TI-84 Tips (Algebra, Geometry, Stats)</h2>
+                <p>Each SAT/ACT math section has unique calculator needs—here’s how to use the TI-84 for the most tested topics:</p>
+
+                <h3>Algebra (60% of SAT/ACT Math)</h3>
+                <ul>
+                    <li>
+                        <strong>Find Intersections of Two Lines</strong>:
+                        <ol>
+                            <li>Enter two linear equations into Y1 and Y2 (e.g., Y1=2x+3, Y2=-x+6).</li>
+                            <li>Press <strong>GRAPH</strong> → <strong>2nd + TRACE</strong> (CALC) → <strong>5:intersect</strong>.</li>
+                            <li>Press <strong>ENTER three times</strong>—calculator displays the intersection point (1,5) → SAT/ACT often asks for x or y value.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Solve Quadratic Equations with No Real Roots</strong>:
+                        <p>SAT sometimes asks for "number of real roots"—graph the quadratic in Y1 and check if it crosses the x-axis (no crossing = 0 real roots).</p>
+                    </li>
+                </ul>
+
+                <h3>Geometry (20-25% of SAT/ACT Math)</h3>
+                <ul>
+                    <li>
+                        <strong>Calculate Area/Volume of Shapes</strong>:
+                        <div class="shortcut-code">
+Area of circle: π×r² → 2nd + ^ (π) × R²<br>
+Volume of sphere: (4/3)πr³ → (4÷3)×π×R³<br>
+Pythagorean theorem: √(a² + b²) → 2nd + √(A² + B²)
+                        </div>
+                        <p>Store side lengths as variables (e.g., 3→A, 4→B) to speed up calculations.</p>
+                    </li>
+                    <li>
+                        <strong>Trigonometric Ratios in Right Triangles</strong>:
+                        <p>ACT: Given a right triangle with angle 30° and opposite side 5, find hypotenuse. Use sin(30) = 5/h → h = 5/sin(30) = 10. Calculator steps: 5 ÷ SIN(30) → ENTER.</p>
+                    </li>
+                </ul>
+
+                <h3>Statistics (10-15% of SAT/ACT Math)</h3>
+                <ul>
+                    <li>
+                        <strong>Linear Regression for Data Questions</strong>:
+                        <p>SAT: Given a table of x (study time) and y (test score), predict y when x=5. Follow our <a href="./mastering-statistical-regression-ti84.html">regression guide</a> → run LinReg → use Y1(5) to predict.</p>
+                    </li>
+                    <li>
+                        <strong>Probability with Combinations/Permutations</strong>:
+                        <div class="shortcut-code">
+Combinations (n choose r): MATH → PRB → 3:nCr<br>
+Example: 5 choose 2 → 5 nCr 2 = 10<br>
+Permutations: MATH → PRB → 2:nPr
+                        </div>
+                    </li>
+                </ul>
+                <div class="tip-box">
+                    <h4>When to Use the Calculator (and When Not To)</h4>
+                    <p>Use the TI-84 for complex calculations (e.g., square roots, trigonometry, regression) but solve simple problems by hand (e.g., 2+3=5, basic algebra) to save time. SAT/ACT math questions are designed to balance calculator and non-calculator work.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>4. Common TI-84 Exam Errors & How to Fix Them</h2>
+                <p>These mistakes cost students valuable points—learn to recognize and fix them instantly:</p>
+                <ol>
+                    <li>
+                        <strong>"ERR:MODE" (Mode Mismatch)</strong>:
+                        <ul>
+                            <li>Cause: Using trigonometric functions in RADIAN mode (ACT/SAT use degrees) or vice versa.</li>
+                            <li>Fix: Press <strong>MODE</strong> → select "DEGREE" (for trig) or "RADIAN" (rarely needed) → press <strong>ENTER</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>"ERR:INVALID DIM" (Invalid Dimension)</strong>:
+                        <ul>
+                            <li>Cause: Graphing with empty lists or mismatched list lengths (common in regression).</li>
+                            <li>Fix: Clear lists (2nd + + → 4:ClrAllLists) or ensure L1 and L2 have the same number of data points.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>"ERR:SOLVER DATA TYPE"</strong>:
+                        <ul>
+                            <li>Cause: Using the solver with incorrect data types (e.g., text instead of numbers).</li>
+                            <li>Fix: Clear the solver (MATH → 0:Solver) and re-enter the equation with numeric values only.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Incorrect Decimal Rounding</strong>:
+                        <ul>
+                            <li>Cause: Calculator set to "FLOAT" (too many decimals) or rounding manually.</li>
+                            <li>Fix: Use the <strong>ROUND</strong> function: MATH → NUM → 2:round( → enter number, decimal places (e.g., round(3.1415, 2) = 3.14).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>5. Time Management Tips for Calculator Sections</h2>
+                <p>SAT Calculator Section: 38 questions, 55 minutes (≈1.45 minutes per question). ACT Math: 60 questions, 60 minutes (1 minute per question). Use these TI-84 tricks to stay on track:</p>
+                <ul>
+                    <li>
+                        <strong>Skip and Return to Calculator-Dependent Questions</strong>:
+                        <p>Answer non-calculator questions first (e.g., simple algebra, geometry definitions) to save time for complex calculator tasks (e.g., regression, graphing).</p>
+                    </li>
+                    <li>
+                        <strong>Use the Calculator for Verification</strong>:
+                        <p>If you solve a problem by hand (e.g., quadratic equation), use the TI-84 to check your answer (e.g., plug x back into the equation) in 5 seconds—catches arithmetic errors.</p>
+                    </li>
+                    <li>
+                        <strong>Memorize Key Buttons</strong>:
+                        <p>Practice until you can find buttons like <strong>2nd + TRACE</strong> (CALC), <strong>STAT</strong>, and <strong>MATRIX</strong> without looking—saves 10-15 seconds per question.</p>
+                    </li>
+                    <li>
+                        <strong>Use the Online Emulator for Practice</strong>:
+                        <p>Our <a href="./ti-84-calculator.html">free TI-84 emulator</a> mirrors the physical calculator’s layout—practice exam questions with it to build muscle memory.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>6. Practice Workflow for SAT/ACT TI-84 Use</h2>
+                <p>Use this step-by-step workflow to practice exam-style questions with your TI-84—consistency is key to mastery:</p>
+                <ol>
+                    <li>
+                        <strong>Step 1: Identify the Question Type</strong> (algebra, geometry, stats) → decide if the calculator will help.
+                    </li>
+                    <li>
+                        <strong>Step 2: Gather Inputs</strong> (e.g., data points, equations, side lengths) → store in variables or lists if needed.
+                    </li>
+                    <li>
+                        <strong>Step 3: Select the Right TI-84 Function</strong> (e.g., LinReg for linear equations, Zero for roots).
+                    </li>
+                    <li>
+                        <strong>Step 4: Execute and Record the Result</strong> → round to the nearest decimal place (match answer choices).
+                    </li>
+                    <li>
+                        <strong>Step 5: Verify with a Quick Check</strong> (e.g., plug result back into the original equation).
+                    </li>
+                </ol>
+                <p><strong>Example SAT Question Workflow:</strong><br>
+                "A line passes through (3,7) and (5,11). What is the y-intercept?"</p>
+                <ol>
+                    <li>Question Type: Algebra (linear equations) → calculator helpful.</li>
+                    <li>Inputs: (3,7) and (5,11) → enter into L1 (3,5) and L2 (7,11).</li>
+                    <li>Function: STAT → CALC → 4:LinReg(ax+b).</li>
+                    <li>Result: a=2, b=1 → y-intercept is 1.</li>
+                    <li>Verify: y=2x+1 → plug x=3 → y=7 (correct).</li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Final Thoughts</h2>
+                <p>The TI-84 Plus CE is more than a calculator—it’s a strategic tool for SAT/ACT success. The tips in this guide will help you use it efficiently, avoid costly errors, and maximize your math score. Remember: the best way to master these tricks is to practice with real SAT/ACT questions—use our <a href="./ti-84-calculator.html">free online emulator</a> to build confidence before test day.</p>
+                <p>Focus on the most tested topics (algebra, linear regression, trigonometry) and memorize the shortcuts that save the most time. On exam day, stay calm, trust your practice, and let the TI-84 handle the heavy lifting—you’ve got this!</p>
+            </div>
+
+            <!-- 博客底部CTA - 引导用户使用在线模拟器/查看博客首页 -->
+            <div class="blog-cta">
+                <h3>Ready to Practice SAT/ACT TI-84 Tips?</h3>
+                <p>Test exam shortcuts with our free online TI-84 Plus CE emulator—perfect for SAT/ACT math prep!</p>
+                <div class="blog-cta-buttons">
+                    <a href="./ti-84-calculator.html" class="blog-cta-button cta-primary">Open Online TI-84 Calculator</a>
+                    <a href="./blog.html" class="blog-cta-button cta-secondary">View All Blog Posts</a>
+                </div>
+            </div>
+
+            <!-- 相关文章 - 关联博客系列内容，提升内链权重 -->
+            <div class="related-posts">
+                <h3>Related TI-84 Guides</h3>
+                <div class="related-posts-grid">
+                    <div class="related-post-card">
+                        <img src="blog/mastering-statistical-regression.jpg" alt="Mastering Statistical Regression on TI-84" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Statistical Analysis</span>
+                            <h4 class="related-post-title"><a href="./mastering-statistical-regression-ti84.html">Mastering Statistical Regression on TI-84</a></h4>
+                            <p class="related-post-excerpt">Learn to solve SAT/ACT stats questions with linear regression—predict values and analyze data like a pro.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/how-to-graph-parametric.jpg" alt="How to Graph Parametric Equations on TI-84 Plus CE" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Graphing Functions</span>
+                            <h4 class="related-post-title"><a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a></h4>
+                            <p class="related-post-excerpt">Master graphing for SAT/ACT math—find intersections, roots, and trends with your TI-84.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/ti-basic-programming.jpg" alt="TI-BASIC Programming: Creating Your First Calculator App" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Programming (TI-BASIC)</span>
+                            <h4 class="related-post-title"><a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a></h4>
+                            <p class="related-post-excerpt">Build simple tools to practice exam questions—automate calculations and speed up your prep.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 - 与站点所有页面统一 -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="./ti-84-calculator.html">TI 84 Calculator</a>
+                <a href="./ti-84-plus-ce.html">Graphing Calculator</a>
+                <a href="#">AI Math Solver</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html">BLOG</a>
+            </div>
+            <div class="footer-col">
+                <h4>Disclaimer</h4>
+                <p>This is a standalone version of the official TI-84 Plus CE HTML5 emulator from Texas Instruments.</p>
+                <p>The emulator files are downloaded from TestNav, where you can also use it for free.</p>
+                <p style="margin-top: 15px;">TI-84 Plus CE is a trademark of Texas Instruments. This website is not affiliated with or endorsed by Texas Instruments.</p>
+                <p style="margin-top: 15px;"><strong>Open Source:</strong> This project is completely open source and available on GitHub. Feel free to contribute, report issues, or fork the project!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 TI 84 Calculator Online  - Free Graphing Calculator Simulator & SAT/ACT Exam Guide.
+        </div>
+    </footer>
+
+    <!-- 核心JS - 移动端菜单切换 + 基础交互 -->
+    <script>
+        // 移动端菜单切换（含aria属性优化，提升可访问性）
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            const isExpanded = nav.classList.contains('active');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        }
+
+        // 点击菜单外部关闭移动端菜单
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // 响应式窗口调整 - 大屏自动显示菜单
+        window.addEventListener('resize', function() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>

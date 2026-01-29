@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>How to Graph Parametric Equations on TI-84 Plus CE | Step-by-Step Guide</title>
+    <meta name="description" content="Learn to graph parametric equations on TI-84 Plus CE with our detailed guide. Master mode setup, window configuration, plotting, and analysis for precalculus & calculus success.">
+    <meta name="keywords" content="graph parametric equations TI-84, TI-84 Plus CE parametric graphs, parametric equations calculator, TI-84 parametric mode, how to plot parametric equations">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TI 84 Calculator Online">
+
+    <!-- Schema.org HowTo 结构化数据 - 适配SEO教程收录 -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Graph Parametric Equations on TI-84 Plus CE",
+  "description": "Step-by-step guide to setting up, graphing, and analyzing parametric equations on the TI-84 Plus CE calculator—perfect for precalculus, calculus, and physics students.",
+  "tools": [
+    {
+      "@type": "HowToTool",
+      "name": "TI-84 Plus CE Graphing Calculator (Physical or Free Online Emulator)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Parametric equations (e.g., x(t) = t·cos(t), y(t) = t·sin(t))"
+    }
+  ],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": ["high school student", "college student", "math educator"]
+  },
+  "url": "https://ti84calculatorapp.com/how-to-graph-parametric-equations.html",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Switch TI-84 to Parametric Mode",
+      "text": "Navigate to the MODE menu and select 'PARAMETRIC' to enable parametric equation support."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Input Parametric Equations (x(t) and y(t))",
+      "text": "Enter the x and y components of your parametric equations into the Y= menu (X₁T, Y₁T)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure Window Settings for the Parameter",
+      "text": "Set Tmin, Tmax, Tstep (parameter range) and X/Y axis ranges to fit the graph."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Graph and Analyze the Parametric Curve",
+      "text": "Plot the equations, use TRACE to explore points, and adjust settings for better visualization."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Troubleshoot Common Graphing Issues",
+      "text": "Fix missing graphs, distorted curves, and syntax errors with targeted solutions."
+    }
+  ]
+}
+</script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* ========== 头部导航 - 与站点所有页面统一 ========== */
+        .site-header{
+            position:sticky;
+            top:0;
+            background:#fff;
+            border-bottom:1px solid #e5e7eb;
+            z-index:1000;
+        }
+        .nav-container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 16px;
+            height:64px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .logo a{
+            font-size:18px;
+            font-weight:700;
+            color:#111827;
+            text-decoration: none;
+        }
+        .main-nav{
+            display:flex;
+            gap:18px;
+        }
+        .main-nav a{
+            font-size:14px;
+            color:#374151;
+            text-decoration: none;
+        }
+        .main-nav a:hover{color:#2563eb}
+        .main-nav a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .nav-cta a{
+            background:#2563eb;
+            color:#fff;
+            padding:8px 16px;
+            border-radius:6px;
+            font-size:14px;
+            text-decoration: none;
+        }
+        /* 移动端菜单 */
+        .menu-toggle{
+            display:none;
+            font-size:22px;
+            cursor:pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        /* ========== 博客标题区 - 与系列博客页统一 ========== */
+        .blog-hero {
+            padding: 60px 20px;
+            background: #f8fafc;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .blog-hero h1 {
+            font-size: 2.2em;
+            color: #000;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-hero p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+        .blog-meta .category {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* ========== 博客主内容+侧边栏布局 ========== */
+        .blog-content {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        /* ========== 侧边栏 - 与博客列表/系列详情页统一 ========== */
+        .blog-sidebar {
+            padding: 0 10px;
+            align-self: flex-start;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        .sidebar-widget {
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .sidebar-widget h3 {
+            font-size: 1.2em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .category-list {
+            list-style: none;
+        }
+        .category-list li {
+            margin-bottom: 12px;
+        }
+        .category-list a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .category-list a:hover {
+            color: #2563eb;
+        }
+        .category-list a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .recent-posts {
+            list-style: none;
+        }
+        .recent-posts li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .recent-posts li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .recent-posts a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .recent-posts a:hover {
+            color: #2563eb;
+        }
+        .recent-posts .post-date {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+        .sidebar-cta {
+            background: #2563eb;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .sidebar-cta h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .sidebar-cta a {
+            display: inline-block;
+            margin-top: 15px;
+            background: #fff;
+            color: #2563eb;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-cta a:hover {
+            background: #f1f5f9;
+        }
+
+        /* ========== 博客正文样式 ========== */
+        .blog-main {
+            max-width: 800px;
+        }
+        .blog-content-block {
+            margin-bottom: 40px;
+        }
+        .blog-content-block h2 {
+            font-size: 1.8em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .blog-content-block h3 {
+            font-size: 1.4em;
+            color: #000;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+        .blog-content-block p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .blog-content-block ul, .blog-content-block ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .blog-content-block li {
+            margin-bottom: 10px;
+        }
+        /* 参数方程示例表格 */
+        .parametric-example-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        .parametric-example-table th, .parametric-example-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .parametric-example-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #000;
+        }
+        /* 按键操作代码块 */
+        .ti84-keystrokes {
+            background: #f5f5f5;
+            padding: 18px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 15px 0;
+            border-left: 4px solid #2563eb;
+        }
+        /* 图片容器 - 适配参数方程截图 */
+        .graph-screenshot {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .graph-screenshot img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            max-height: 400px;
+        }
+        /* 提示框/警告框 */
+        .tip-box {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2563eb;
+        }
+        .tip-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .warning-box {
+            background: #fff8f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #dc2626;
+        }
+        .warning-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        /* 内链样式 - 统一站点内链视觉 */
+        .blog-main a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .blog-main a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== 博客底部CTA + 相关文章 ========== */
+        .blog-cta {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .blog-cta h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .blog-cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .blog-cta-button {
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .cta-primary {
+            background: #2563eb;
+            color: #fff;
+        }
+        .cta-primary:hover {
+            background: #1d4ed8;
+        }
+        .cta-secondary {
+            background: #fff;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+        .cta-secondary:hover {
+            background: #f8fafc;
+        }
+        .related-posts {
+            margin-top: 60px;
+        }
+        .related-posts h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .related-post-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .related-post-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .related-post-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .related-post-content {
+            padding: 20px;
+        }
+        .related-post-category {
+            font-size: 0.9em;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .related-post-title {
+            font-size: 1.1em;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .related-post-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .related-post-title a:hover {
+            color: #2563eb;
+        }
+        .related-post-excerpt {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========== 页脚 - 与站点所有页面统一 ========== */
+        .site-footer{
+            background:#0f172a;
+            color:#cbd5f5;
+            margin-top: 60px;
+        }
+        .footer-container{
+            max-width:1200px;
+            margin:auto;
+            padding:48px 20px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:32px;
+        }
+        .footer-col h4{
+            font-size:14px;
+            color:#fff;
+            margin-bottom:12px;
+        }
+        .footer-col a{
+            display:block;
+            font-size:13px;
+            color:#cbd5f5;
+            margin-bottom:8px;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: #2563eb;
+        }
+        .footer-col p{
+            font-size:12px;
+            color:#94a3b8;
+            line-height:1.6;
+        }
+        .footer-bottom{
+            border-top:1px solid #1e293b;
+            text-align:center;
+            font-size:12px;
+            padding:16px;
+            color:#94a3b8;
+        }
+
+        /* ========== 移动端响应式适配 - 768px以下 ========== */
+        @media (max-width: 768px) {
+            /* 导航 */
+            .main-nav {
+                display:none;
+                position:absolute;
+                top:64px;
+                left:0;
+                right:0;
+                background:#fff;
+                flex-direction:column;
+                padding:20px;
+                gap:10px;
+                border-bottom:1px solid #e5e7eb;
+            }
+            .main-nav.active {
+                display:flex;
+            }
+            .menu-toggle{
+                display:block;
+            }
+            /* 博客布局 */
+            .blog-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .blog-sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+            /* 博客标题 */
+            .blog-hero h1 {
+                font-size: 1.8em;
+            }
+            /* 正文 */
+            .blog-content-block h2 {
+                font-size: 1.5em;
+            }
+            .blog-content-block h3 {
+                font-size: 1.2em;
+            }
+            /* 相关文章 */
+            .related-posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== 小屏适配 - 480px以下 ========== */
+        @media (max-width: 480px) {
+            .blog-hero {
+                padding: 40px 15px;
+            }
+            .blog-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .blog-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            .parametric-example-table {
+                font-size: 12px;
+            }
+            .parametric-example-table th, .parametric-example-table td {
+                padding: 8px 10px;
+            }
+            .ti84-keystrokes {
+                font-size: 12px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <!-- 头部导航 - 与站点统一，BLOG标为active -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo"><a href="/">TI 84 Calculator Online</a></div>
+            <nav class="main-nav" id="mainNav">
+                <a href="./ti-84-calculator.html">TI-84 Calculator</a>   
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html" class="active">BLOG</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="./ti-84-calculator.html">Start Calculator</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- 博客标题区 - 含标题、描述、元信息（分类/日期） -->
+    <section class="blog-hero">
+        <h1>How to Graph Parametric Equations on TI-84 Plus CE</h1>
+        <p>Step-by-step guide to plotting parametric equations on the TI-84 Plus CE. Master mode setup, window configuration, curve analysis, and troubleshooting for precalculus, calculus, and physics problems.</p>
+        <div class="blog-meta">
+            <span class="category">Graphing Functions</span>
+            <span class="date">October 15, 2025</span>
+        </div>
+    </section>
+
+    <!-- 博客主内容+侧边栏 -->
+    <div class="blog-content">
+        <!-- 侧边栏 - 分类（当前分类active）+ 最新文章 + 快捷CTA -->
+        <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="./blog.html">All Posts</a></li>
+                    <li><a href="#">Getting Started</a></li>
+                    <li><a href="#" class="active">Graphing Functions</a></li>
+                    <li><a href="#">Statistical Analysis</a></li>
+                    <li><a href="#">Programming (TI-BASIC)</a></li>
+                    <li><a href="#">Troubleshooting</a></li>
+                    <li><a href="#">Exam Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a>
+                        <span class="post-date">October 15, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a>
+                        <span class="post-date">October 8, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./mastering-statistical-regression-ti84.html">Mastering Statistical Regression on TI-84</a>
+                        <span class="post-date">September 29, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./ti-84-sat-act-exam-tips.html">TI-84 Plus CE Tips for SAT & ACT Exams</a>
+                        <span class="post-date">September 18, 2025</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-cta">
+                <h4>Practice Parametric Graphs Now</h4>
+                <p>Test plotting equations with our free online TI-84 Plus CE emulator—no hardware required!</p>
+                <a href="./ti-84-calculator.html">Open Online Calculator</a>
+            </div>
+        </aside>
+
+        <!-- 博客正文核心内容 -->
+        <main class="blog-main">
+            <div class="blog-content-block">
+                <p>Parametric equations are a powerful tool for describing complex curves that can’t be easily represented with a single function (y = f(x)). Instead of defining y directly in terms of x, parametric equations use a third variable (called a "parameter," usually t) to define both x and y as separate functions: x = x(t) and y = y(t). This makes them ideal for graphing circles, ellipses, spirals, projectiles, and other dynamic paths—common topics in precalculus, calculus, and physics.</p>
+                <p>The TI-84 Plus CE calculator simplifies parametric graphing with built-in parametric mode and intuitive controls. In this guide, we’ll walk you through every step: switching to parametric mode, entering equations, configuring window settings, plotting curves, and analyzing results. All steps work on both physical TI-84 Plus CE calculators and our <a href="./ti-84-calculator.html">free online emulator</a>—so you can practice anywhere, anytime.</p>
+
+                <div class="graph-screenshot">
+                    <img src="blog/parametric-spiral-example.jpg" alt="TI-84 Plus CE Parametric Graph Example - Spiral Curve from x(t)=t·cos(t), y(t)=t·sin(t)">
+                    <p style="font-size: 0.9em; color: #666; margin-top: 10px;">Example: Spiral parametric graph on TI-84 Plus CE</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>What Are Parametric Equations?</h2>
+                <p>Before diving into the TI-84 steps, let’s recap the basics: parametric equations define x and y as functions of a single parameter (typically t, representing time or another independent variable). For example:</p>
+                <ul>
+                    <li><strong>Circle</strong>: x(t) = r·cos(t), y(t) = r·sin(t) (r = radius, t ranges from 0 to 2π)</li>
+                    <li><strong>Spiral</strong>: x(t) = t·cos(t), y(t) = t·sin(t) (t ranges from 0 to 6π)</li>
+                    <li><strong>Projectile Motion</strong>: x(t) = v₀·cos(θ)·t, y(t) = v₀·sin(θ)·t - 0.5·g·t² (v₀ = initial velocity, θ = angle, g = gravity)</li>
+                </ul>
+                <p>The key advantage of parametric equations is that they can represent curves that fail the vertical line test (e.g., circles) or change direction (e.g., projectile paths). The TI-84’s parametric mode lets you visualize these curves with just a few button presses.</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Prerequisites to Get Started</h2>
+                <p>You’ll need just two things to follow along—no advanced math knowledge required:</p>
+                <ol>
+                    <li>A <strong>TI-84 Plus CE calculator</strong> (physical) or our <a href="./ti-84-calculator.html">free online TI-84 Plus CE emulator</a> (we recommend the emulator for easy practice).</li>
+                    <li>A set of parametric equations (we’ll use examples like circles and spirals if you don’t have your own).</li>
+                    <li>Basic familiarity with the TI-84’s core buttons (MODE, Y=, WINDOW, GRAPH) – our <a href="./guide.html">TI-84 Guide page</a> has a refresher if you need it.</li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 1: Switch the TI-84 to Parametric Mode</h2>
+                <p>The first step is to tell the calculator you’re working with parametric equations (not standard functions). Here’s how:</p>
+                <div class="ti84-keystrokes">
+1. Press the MODE button (top row of keys, left of 2nd)<br>
+2. Scroll down using the arrow keys to the "FUNCTION" line (labeled "FUNC")<br>
+3. Use the right arrow key to highlight "PARAMETRIC" (labeled "PAR")<br>
+4. Press ENTER to select parametric mode<br>
+5. Press 2nd + MODE (QUIT) to exit the MODE menu and return to the home screen
+                </div>
+                <div class="tip-box">
+                    <h4>Pro Tip: Verify Mode Selection</h4>
+                    <p>After switching to parametric mode, check the top of the Y= menu—you’ll see "X₁T" and "Y₁T" instead of "Y₁" (standard function mode). This confirms you’re ready to enter parametric equations.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 2: Enter Your Parametric Equations (x(t) and y(t))</h2>
+                <p>Now you’ll input the x and y components of your parametric equations into the TI-84’s Y= menu. Let’s use a <strong>spiral</strong> as our example: x(t) = t·cos(t), y(t) = t·sin(t).</p>
+                <ol>
+                    <li>Press the <strong>Y=</strong> button (top left corner of the calculator).</li>
+                    <li>You’ll see fields labeled X₁T, Y₁T, X₂T, Y₂T, etc. (the "T" stands for the parameter).</li>
+                    <li>Navigate to <strong>X₁T</strong> using the arrow keys.</li>
+                    <li>Enter the x-component: <code>T*cos(T)</code>
+                        <ul>
+                            <li>Press <strong>X,T,θ,n</strong> (button below MODE) to type "T" (the parameter).</li>
+                            <li>Press <strong>×</strong> (multiplication) to add the "*" symbol.</li>
+                            <li>Press <strong>2nd + cos</strong> (cosine function) and type "T" again.</li>
+                        </ul>
+                    </li>
+                    <li>Navigate to <strong>Y₁T</strong> and enter the y-component: <code>T*sin(T)</code>
+                        <ul>
+                            <li>Repeat the steps above, using <strong>2nd + sin</strong> for the sine function.</li>
+                        </ul>
+                    </li>
+                    <li>To enter additional parametric equations (e.g., a circle alongside the spiral), use X₂T/Y₂T, X₃T/Y₃T, etc.</li>
+                </ol>
+                <div class="warning-box">
+                    <h4>Common Syntax Error: Missing Multiplication Symbols</h4>
+                    <p>The TI-84 won’t recognize "Tcos(T)"—you must include the multiplication symbol ("T*cos(T)"). Always add "*" between variables and functions.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 3: Configure Window Settings for the Parameter</h2>
+                <p>Window settings determine the range of the parameter (t) and the x/y axes—critical for seeing the full curve. For our spiral example (x(t) = t·cos(t), y(t) = t·sin(t)), we’ll use these settings:</p>
+                <ol>
+                    <li>Press the <strong>WINDOW</strong> button (top row, between Y= and ZOOM).</li>
+                    <li>Set the <strong>parameter range (Tmin, Tmax, Tstep)</strong>:
+                        <ul>
+                            <li>Tmin: Starting value of t (e.g., 0 for the spiral).</li>
+                            <li>Tmax: Ending value of t (e.g., 6π for a full spiral—press 2nd + π to type π).</li>
+                            <li>Tstep: Increment for t (smaller = smoother curve, e.g., 0.1). Too small = slow graphing; too large = jagged curve.</li>
+                        </ul>
+                    </li>
+                    <li>Set the <strong>x-axis range (Xmin, Xmax, Xscl)</strong>:
+                        <ul>
+                            <li>Xmin/Xmax: Minimum/maximum x-values to display (e.g., -20 to 20 for the spiral).</li>
+                            <li>Xscl: X-axis scale (e.g., 5 = tick marks every 5 units).</li>
+                        </ul>
+                    </li>
+                    <li>Set the <strong>y-axis range (Ymin, Ymax, Yscl)</strong>:
+                        <ul>
+                            <li>Match Xmin/Xmax for circular/elliptical curves (e.g., -20 to 20 for the spiral) to avoid distortion.</li>
+                            <li>Yscl: Y-axis scale (e.g., 5 = tick marks every 5 units).</li>
+                        </ul>
+                    </li>
+                    <li>Press <strong>GRAPH</strong> to plot the curve!</li>
+                </ol>
+
+                <p>Here are window settings for common parametric equations:</p>
+                <table class="parametric-example-table">
+                    <thead>
+                        <tr>
+                            <<<th>Curve Type</</</th>
+                            <<<th>Equations</</</th>
+                            <<th>Window Settings</</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Circle (r=5)</td>
+                            <td>X₁T=5cos(T)<br>Y₁T=5sin(T)</td>
+                            <td>Tmin=0, Tmax=2π, Tstep=0.1<br>Xmin=-10, Xmax=10, Xscl=2<br>Ymin=-10, Ymax=10, Yscl=2</td>
+                        </tr>
+                        <tr>
+                            <td>Spiral</td>
+                            <td>X₁T=Tcos(T)<br>Y₁T=Tsin(T)</td>
+                            <td>Tmin=0, Tmax=6π, Tstep=0.1<br>Xmin=-20, Xmax=20, Xscl=5<br>Ymin=-20, Ymax=20, Yscl=5</td>
+                        </tr>
+                        <tr>
+                            <td>Parabola (Projectile)</td>
+                            <td>X₁T=20T<br>Y₁T=-4.9T²+15T</td>
+                            <td>Tmin=0, Tmax=3, Tstep=0.05<br>Xmin=0, Xmax=60, Xscl=10<br>Ymin=0, Ymax=12, Yscl=2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 4: Graph and Analyze the Parametric Curve</h2>
+                <p>Once you’ve entered equations and set the window, press <strong>GRAPH</strong>—the TI-84 will plot the parametric curve. For our spiral example, you’ll see a curve that expands outward as t increases. Here’s how to analyze the graph:</p>
+                <ol>
+                    <li>
+                        <strong>Trace the Curve</strong>:
+                        <ul>
+                            <li>Press <strong>TRACE</strong> to move along the curve. The calculator will display the current t, x, and y values at the bottom of the screen.</li>
+                            <li>Use the left/right arrow keys to move backward/forward through the parameter t.</li>
+                            <li>Example: For t=3π, the spiral’s x and y values will be x=3π·cos(3π) ≈ -9.42, y=3π·sin(3π) = 0.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Zoom In/Out</strong>:
+                        <ul>
+                            <li>Press <strong>ZOOM</strong> to access zoom options:
+                                <li>Zoom In (2): Magnify a specific area (select a point with arrow keys, press ENTER).</li>
+                                <li>Zoom Out (3): Shrink the view to see more of the curve.</li>
+                                <li>Zoom Square (5): Adjust x/y scales to make circles look circular (avoids distortion).</li>
+                                <li>Zoom Fit (9): Auto-adjust window to fit the entire curve (great if your initial settings cut off the curve).</li>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Calculate Key Points</strong>:
+                        <ul>
+                            <li>Press <strong>2nd + TRACE</strong> (CALC) to access calculation tools:
+                                <li>Value (1): Enter a specific t value to find the corresponding x and y.</li>
+                                <li>Intersect (5): Find where two parametric curves intersect (enter a second set of equations in X₂T/Y₂T first).</li>
+                                <li>Derivatives (6: dy/dx, 7: dx/dt): Calculate derivatives at a point (calculus feature).</li>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 5: Troubleshoot Common Parametric Graphing Issues</h2>
+                <p>Even experienced users run into problems—here’s how to fix the most common parametric graphing errors on the TI-84:</p>
+                <ol>
+                    <li>
+                        <strong>Curve Doesn’t Appear (Blank Screen)</strong>:
+                        <ul>
+                            <li>Cause 1: Wrong mode (still in FUNCTION mode instead of PARAMETRIC). Fix: Switch to parametric mode (Step 1).</li>
+                            <li>Cause 2: Window settings are too narrow (curve is outside x/y range). Fix: Use Zoom Fit (ZOOM → 9) or expand Xmin/Xmax/Ymin/Ymax.</li>
+                            <li>Cause 3: Tstep is too large (curve is too jagged to see). Fix: Set Tstep to 0.1 or smaller.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Distorted Curve (e.g., Circle Looks Like Ellipse)</strong>:
+                        <ul>
+                            <li>Cause: X and Y scales are mismatched. Fix: Use Zoom Square (ZOOM → 5) or set Xmin/Xmax and Ymin/Ymax to the same range (e.g., -10 to 10).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Syntax Error When Entering Equations</strong>:
+                        <ul>
+                            <li>Cause: Missing multiplication symbol (e.g., "Tcos(T)" instead of "T*cos(T)") or invalid characters.</li>
+                            <li>Fix: Add "*" between variables and functions; use only TI-84’s built-in keys (X,T,θ,n for T).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Slow Graphing</strong>:
+                        <ul>
+                            <li>Cause: Tstep is too small (calculator plots too many points) or Tmax is too large.</li>
+                            <li>Fix: Increase Tstep to 0.2 (still smooth) or reduce Tmax (e.g., use 4π instead of 6π for a smaller spiral).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Advanced Parametric Graphing Tips</h2>
+                <p>Once you master the basics, these tips will help you create more complex parametric graphs and get more from your TI-84:</p>
+                <ul>
+                    <li>
+                        <strong>Graph Multiple Parametric Curves</strong>:
+                        <p>Enter additional equations in X₂T/Y₂T, X₃T/Y₃T, etc. (e.g., a circle and a spiral on the same graph). Each curve will appear in a different color for easy differentiation.</p>
+                    </li>
+                    <li>
+                        <strong>Restrict the Parameter Range</strong>:
+                        <p>Plot only a portion of a curve by adjusting Tmin/Tmax (e.g., Tmin=π/2, Tmax=3π/2 for the left half of a circle).</p>
+                    </li>
+                    <li>
+                        <strong>Use Piecewise Parametric Equations</strong>:
+                        <p>Combine multiple curves with the "if" command (2nd + MATH → TEST → 1:if). Example: Plot a circle for t=0-2π and a line for t=2π-4π.</p>
+                    </li>
+                    <li>
+                        <strong>Save Window Settings</strong>:
+                        <p>Store custom window settings for common curves (e.g., circles) using ZOOM → STORE → select a number (1-9). Recall later with ZOOM → RECALL.</p>
+                    </li>
+                    <li>
+                        <strong>Automate with TI-BASIC</strong>:
+                        <p>Write a TI-BASIC program to auto-enter parametric equations, set window settings, and graph—learn how in our <a href="./ti-basic-programming-first-app.html">TI-BASIC programming guide</a>.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Final Thoughts</h2>
+                <p>Graphing parametric equations on the TI-84 Plus CE is a straightforward process once you master the mode setup, window configuration, and analysis tools. Whether you’re studying precalculus, calculus, or physics, parametric graphs help you visualize complex curves and dynamic paths that would be impossible to represent with standard functions.</p>
+                <p>The key to mastery is practice: start with simple curves like circles and spirals, experiment with window settings, and troubleshoot common issues. Use our <a href="./ti-84-calculator.html">free online TI-84 emulator</a> to practice anywhere—no hardware required. With time, you’ll be able to plot even the most complex parametric equations with confidence.</p>
+                <p>Remember, the TI-84 is a tool to enhance your understanding—not just a plotting device. Use the TRACE and CALC features to explore how x and y change with the parameter t, and you’ll gain a deeper insight into parametric equations that will serve you well in math and science courses.</p>
+            </div>
+
+            <!-- 博客底部CTA - 引导用户使用在线模拟器/查看博客首页 -->
+            <div class="blog-cta">
+                <h3>Ready to Plot Parametric Equations?</h3>
+                <p>Test your equations with our free online TI-84 Plus CE emulator—perfect for precalculus and calculus practice!</p>
+                <div class="blog-cta-buttons">
+                    <a href="./ti-84-calculator.html" class="blog-cta-button cta-primary">Open Online TI-84 Calculator</a>
+                    <a href="./blog.html" class="blog-cta-button cta-secondary">View All Blog Posts</a>
+                </div>
+            </div>
+
+            <!-- 相关文章 - 关联博客系列内容，提升内链权重 -->
+            <div class="related-posts">
+                <h3>Related TI-84 Guides</h3>
+                <div class="related-posts-grid">
+                    <div class="related-post-card">
+                        <img src="blog/ti-basic-programming.jpg" alt="TI-BASIC Programming: Creating Your First Calculator App" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Programming (TI-BASIC)</span>
+                            <h4 class="related-post-title"><a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a></h4>
+                            <p class="related-post-excerpt">Automate parametric graphing with TI-BASIC—build a program to auto-enter equations and set window settings.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/mastering-statistical-regression.jpg" alt="Mastering Statistical Regression on TI-84" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Statistical Analysis</span>
+                            <h4 class="related-post-title"><a href="./mastering-statistical-regression-ti84.html">Mastering Statistical Regression on TI-84</a></h4>
+                            <p class="related-post-excerpt">Combine parametric graphs with regression to analyze real-world data like projectile motion.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/exam-tips.jpg" alt="TI-84 Plus CE Tips for SAT & ACT Exams" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Exam Tips</span>
+                            <h4 class="related-post-title"><a href="./ti-84-sat-act-exam-tips.html">TI-84 Plus CE Tips for SAT & ACT Exams</a></h4>
+                            <p class="related-post-excerpt">Master parametric graphing for standardized tests—key tips for precalculus-related exam questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 - 与站点所有页面统一 -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="./ti-84-calculator.html">TI 84 Calculator</a>
+                <a href="./ti-84-plus-ce.html">Graphing Calculator</a>
+                <a href="#">AI Math Solver</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html">BLOG</a>
+            </div>
+            <div class="footer-col">
+                <h4>Disclaimer</h4>
+                <p>This is a standalone version of the official TI-84 Plus CE HTML5 emulator from Texas Instruments.</p>
+                <p>The emulator files are downloaded from TestNav, where you can also use it for free.</p>
+                <p style="margin-top: 15px;">TI-84 Plus CE is a trademark of Texas Instruments. This website is not affiliated with or endorsed by Texas Instruments.</p>
+                <p style="margin-top: 15px;"><strong>Open Source:</strong> This project is completely open source and available on GitHub. Feel free to contribute, report issues, or fork the project!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 TI 84 Calculator Online  - Free Graphing Calculator Simulator & Parametric Graph Guide.
+        </div>
+    </footer>
+
+    <!-- 核心JS - 移动端菜单切换 + 基础交互 -->
+    <script>
+        // 移动端菜单切换（含aria属性优化，提升可访问性）
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            const isExpanded = nav.classList.contains('active');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        }
+
+        // 点击菜单外部关闭移动端菜单
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // 响应式窗口调整 - 大屏自动显示菜单
+        window.addEventListener('resize', function() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>

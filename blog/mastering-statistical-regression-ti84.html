@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mastering Statistical Regression on TI-84 | Linear, Quadratic & Exponential</title>
+    <meta name="description" content="Step-by-step guide to mastering statistical regression on TI-84 Plus CE: linear, quadratic, exponential regression, residual graphs, and result interpretation for students & teachers.">
+    <meta name="keywords" content="TI-84 statistical regression, linear regression TI-84, quadratic regression TI-84, exponential regression TI-84, TI-84 residual graphs">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TI 84 Calculator Online">
+
+    <!-- Schema.org HowTo 结构化数据 - 适配SEO教程收录 -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Mastering Statistical Regression on TI-84 Plus CE",
+  "description": "Comprehensive guide to performing linear, quadratic, and exponential regression on the TI-84 Plus CE calculator—learn to input data, analyze results, and validate models with residual graphs.",
+  "tools": [
+    {
+      "@type": "HowToTool",
+      "name": "TI-84 Plus CE Graphing Calculator (Physical or Free Online Emulator)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Statistical data set (e.g., x/y variables for analysis)"
+    }
+  ],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": ["student", "math educator", "researcher"]
+  },
+  "url": "https://ti84calculatorapp.com/mastering-statistical-regression-ti84.html",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Input Statistical Data into TI-84 Lists",
+      "text": "Enter x-variable data into List 1 (L1) and corresponding y-variable data into List 2 (L2) using the STAT menu."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Select the Appropriate Regression Model",
+      "text": "Choose linear (LinReg), quadratic (QuadReg), or exponential (ExpReg) regression based on your data's pattern."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Execute Regression and Interpret Results",
+      "text": "Run the regression analysis to get the model equation, correlation coefficient (r), and coefficient of determination (r²)."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Plot the Regression Curve and Residuals",
+      "text": "Graph the regression line/curve with your data points and generate residual graphs to validate model fit."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Use the Regression Model for Predictions",
+      "text": "Apply the regression equation to predict new y-values from unknown x-values using the TI-84's CALC menu."
+    }
+  ]
+}
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* ========== 头部导航 - 与站点所有页面统一 ========== */
+        .site-header{
+            position:sticky;
+            top:0;
+            background:#fff;
+            border-bottom:1px solid #e5e7eb;
+            z-index:1000;
+        }
+        .nav-container{
+            max-width:1200px;
+            margin:auto;
+            padding:0 16px;
+            height:64px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .logo a{
+            font-size:18px;
+            font-weight:700;
+            color:#111827;
+            text-decoration: none;
+        }
+        .main-nav{
+            display:flex;
+            gap:18px;
+        }
+        .main-nav a{
+            font-size:14px;
+            color:#374151;
+            text-decoration: none;
+        }
+        .main-nav a:hover{color:#2563eb}
+        .main-nav a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .nav-cta a{
+            background:#2563eb;
+            color:#fff;
+            padding:8px 16px;
+            border-radius:6px;
+            font-size:14px;
+            text-decoration: none;
+        }
+        /* 移动端菜单 */
+        .menu-toggle{
+            display:none;
+            font-size:22px;
+            cursor:pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        /* ========== 博客标题区 - 与系列博客页统一 ========== */
+        .blog-hero {
+            padding: 60px 20px;
+            background: #f8fafc;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .blog-hero h1 {
+            font-size: 2.2em;
+            color: #000;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .blog-hero p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 0.95em;
+            color: #666;
+            flex-wrap: wrap;
+        }
+        .blog-meta .category {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* ========== 博客主内容+侧边栏布局 ========== */
+        .blog-content {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        /* ========== 侧边栏 - 与博客列表/系列详情页统一 ========== */
+        .blog-sidebar {
+            padding: 0 10px;
+            align-self: flex-start;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+        .sidebar-widget {
+            margin-bottom: 40px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .sidebar-widget h3 {
+            font-size: 1.2em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .category-list {
+            list-style: none;
+        }
+        .category-list li {
+            margin-bottom: 12px;
+        }
+        .category-list a {
+            color: #374151;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.2s;
+        }
+        .category-list a:hover {
+            color: #2563eb;
+        }
+        .category-list a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+        .recent-posts {
+            list-style: none;
+        }
+        .recent-posts li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .recent-posts li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .recent-posts a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .recent-posts a:hover {
+            color: #2563eb;
+        }
+        .recent-posts .post-date {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            display: block;
+        }
+        .sidebar-cta {
+            background: #2563eb;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .sidebar-cta h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .sidebar-cta a {
+            display: inline-block;
+            margin-top: 15px;
+            background: #fff;
+            color: #2563eb;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-cta a:hover {
+            background: #f1f5f9;
+        }
+
+        /* ========== 博客正文样式 ========== */
+        .blog-main {
+            max-width: 800px;
+        }
+        .blog-content-block {
+            margin-bottom: 40px;
+        }
+        .blog-content-block h2 {
+            font-size: 1.8em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .blog-content-block h3 {
+            font-size: 1.4em;
+            color: #000;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+        .blog-content-block p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .blog-content-block ul, .blog-content-block ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .blog-content-block li {
+            margin-bottom: 10px;
+        }
+        /* 数据表格样式 - 适配统计数据展示 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .data-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #000;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        /* 回归结果解释表格 */
+        .regression-results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        .regression-results-table th, .regression-results-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .regression-results-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #000;
+            width: 30%;
+        }
+        /* 提示框/示例框 */
+        .tip-box {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2563eb;
+        }
+        .tip-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        /* 注意框 */
+        .note-box {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .note-box h4 {
+            color: #000;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        /* 代码块样式 - 适配TI-84操作命令 */
+        .ti操作-code {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 20px 0;
+            overflow-x: auto;
+            border: 1px solid #e0e0e0;
+        }
+        /* 内链样式 - 统一站点内链视觉 */
+        .blog-main a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .blog-main a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== 博客底部CTA + 相关文章 ========== */
+        .blog-cta {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .blog-cta h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 15px;
+        }
+        .blog-cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .blog-cta-button {
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .cta-primary {
+            background: #2563eb;
+            color: #fff;
+        }
+        .cta-primary:hover {
+            background: #1d4ed8;
+        }
+        .cta-secondary {
+            background: #fff;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+        .cta-secondary:hover {
+            background: #f8fafc;
+        }
+        .related-posts {
+            margin-top: 60px;
+        }
+        .related-posts h3 {
+            font-size: 1.5em;
+            color: #000;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .related-post-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .related-post-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .related-post-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .related-post-content {
+            padding: 20px;
+        }
+        .related-post-category {
+            font-size: 0.9em;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .related-post-title {
+            font-size: 1.1em;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .related-post-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .related-post-title a:hover {
+            color: #2563eb;
+        }
+        .related-post-excerpt {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========== 页脚 - 与站点所有页面统一 ========== */
+        .site-footer{
+            background:#0f172a;
+            color:#cbd5f5;
+            margin-top: 60px;
+        }
+        .footer-container{
+            max-width:1200px;
+            margin:auto;
+            padding:48px 20px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:32px;
+        }
+        .footer-col h4{
+            font-size:14px;
+            color:#fff;
+            margin-bottom:12px;
+        }
+        .footer-col a{
+            display:block;
+            font-size:13px;
+            color:#cbd5f5;
+            margin-bottom:8px;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: #2563eb;
+        }
+        .footer-col p{
+            font-size:12px;
+            color:#94a3b8;
+            line-height:1.6;
+        }
+        .footer-bottom{
+            border-top:1px solid #1e293b;
+            text-align:center;
+            font-size:12px;
+            padding:16px;
+            color:#94a3b8;
+        }
+
+        /* ========== 移动端响应式适配 - 768px以下 ========== */
+        @media (max-width: 768px) {
+            /* 导航 */
+            .main-nav {
+                display:none;
+                position:absolute;
+                top:64px;
+                left:0;
+                right:0;
+                background:#fff;
+                flex-direction:column;
+                padding:20px;
+                gap:10px;
+                border-bottom:1px solid #e5e7eb;
+            }
+            .main-nav.active {
+                display:flex;
+            }
+            .menu-toggle{
+                display:block;
+            }
+            /* 博客布局 */
+            .blog-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .blog-sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+            /* 博客标题 */
+            .blog-hero h1 {
+                font-size: 1.8em;
+            }
+            /* 正文 */
+            .blog-content-block h2 {
+                font-size: 1.5em;
+            }
+            .blog-content-block h3 {
+                font-size: 1.2em;
+            }
+            /* 相关文章 */
+            .related-posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== 小屏适配 - 480px以下 ========== */
+        @media (max-width: 480px) {
+            .blog-hero {
+                padding: 40px 15px;
+            }
+            .blog-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .blog-cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            .data-table, .regression-results-table {
+                font-size: 12px;
+            }
+            .data-table th, .data-table td, .regression-results-table th, .regression-results-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <!-- 头部导航 - 与站点统一，BLOG标为active -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo"><a href="/">TI 84 Calculator Online</a></div>
+            <nav class="main-nav" id="mainNav">
+                <a href="./ti-84-calculator.html">TI-84 Calculator</a>   
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html" class="active">BLOG</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="./ti-84-calculator.html">Start Calculator</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- 博客标题区 - 含标题、描述、元信息（分类/日期） -->
+    <section class="blog-hero">
+        <h1>Mastering Statistical Regression on TI-84</h1>
+        <p>Comprehensive guide to linear, quadratic, and exponential regression on the TI-84 Plus CE. Learn to input data, analyze results, plot residual graphs, and make predictions with confidence.</p>
+        <div class="blog-meta">
+            <span class="category">Statistical Analysis</span>
+            <span class="date">September 29, 2025</span>
+        </div>
+    </section>
+
+    <!-- 博客主内容+侧边栏 -->
+    <div class="blog-content">
+        <!-- 侧边栏 - 分类（当前分类active）+ 最新文章 + 快捷CTA -->
+        <aside class="blog-sidebar">
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="./blog.html">All Posts</a></li>
+                    <li><a href="#">Getting Started</a></li>
+                    <li><a href="#">Graphing Functions</a></li>
+                    <li><a href="#" class="active">Statistical Analysis</a></li>
+                    <li><a href="#">Programming (TI-BASIC)</a></li>
+                    <li><a href="#">Troubleshooting</a></li>
+                    <li><a href="#">Exam Tips</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Recent Posts</h3>
+                <ul class="recent-posts">
+                    <li>
+                        <a href="./mastering-statistical-regression-ti84.html">Mastering Statistical Regression on TI-84</a>
+                        <span class="post-date">September 29, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a>
+                        <span class="post-date">October 8, 2025</span>
+                    </li>
+                    <li>
+                        <a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a>
+                        <span class="post-date">October 15, 2025</span>
+                    </li>
+                    <li>
+                        <a href="#">TI-84 Plus CE Tips for SAT & ACT Exams</a>
+                        <span class="post-date">September 18, 2025</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-cta">
+                <h4>Practice Regression Now</h4>
+                <p>Test statistical analysis with our free online TI-84 Plus CE emulator—no hardware required!</p>
+                <a href="./ti-84-calculator.html">Open Online Calculator</a>
+            </div>
+        </aside>
+
+        <!-- 博客正文核心内容 -->
+        <main class="blog-main">
+            <div class="blog-content-block">
+                <p>Statistical regression is one of the most powerful tools in data analysis—whether you’re analyzing experimental results, predicting trends, or solving real-world math problems. The TI-84 Plus CE calculator simplifies regression analysis with built-in functions for linear, quadratic, exponential, and more models, making it a go-to tool for students, teachers, and researchers.</p>
+                <p>In this guide, we’ll break down everything you need to master regression on the TI-84 Plus CE: from inputting data to interpreting key metrics like correlation coefficient (r) and coefficient of determination (r²), plotting regression curves, and validating models with residual graphs. We’ll use practical examples (like student study time vs. test scores) so you can apply what you learn immediately—on a physical TI-84 or our <a href="./ti-84-calculator.html">free online emulator</a>.</p>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>What Is Statistical Regression?</h2>
+                <p>Regression analysis is a statistical method that finds the relationship between two or more variables. For most TI-84 users, this means finding a mathematical equation (the "regression model") that best fits a set of (x, y) data points. The goal is to:</p>
+                <ul>
+                    <li>Describe the relationship between variables (e.g., "As study time increases, test scores tend to increase").</li>
+                    <li>Predict unknown y-values from given x-values (e.g., "A student who studies 5 hours will score 85 on the test").</li>
+                    <li>Measure how well the model fits the data (using metrics like r²).</li>
+                </ul>
+                <p>The TI-84 Plus CE supports 7+ regression models—we’ll focus on the three most commonly used:</p>
+                <div class="data-table">
+                    <thead>
+                        <tr>
+                            <<th>Regression Type</</th>
+                            <<th>Equation Form</</th>
+                            <<th>Best For</</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Linear (LinReg)</td>
+                            <td>y = ax + b</td>
+                            <td>Straight-line relationships (e.g., study time vs. test score)</td>
+                        </tr>
+                        <tr>
+                            <td>Quadratic (QuadReg)</td>
+                            <td>y = ax² + bx + c</td>
+                            <td>Curved relationships with one peak/valley (e.g., height vs. time for a projectile)</td>
+                        </tr>
+                        <tr>
+                            <td>Exponential (ExpReg)</td>
+                            <td>y = abˣ</td>
+                            <td>Growth/decay relationships (e.g., population growth, radioactive decay)</td>
+                        </tr>
+                    </tbody>
+                </div>
+                <div class="tip-box">
+                    <h4>How to Choose the Right Model</h4>
+                    <p>Always start by plotting your data (STAT PLOT) to visualize the pattern. If the points form a straight line, use linear regression. If they curve upward/downward with a single bend, use quadratic. If they grow or decay rapidly, use exponential.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Prerequisites to Get Started</h2>
+                <p>You’ll need just a few things to follow along—no advanced stats knowledge required:</p>
+                <ol>
+                    <li>A <strong>TI-84 Plus CE calculator</strong> (physical) or our <a href="./ti-84-calculator.html">free online TI-84 Plus CE emulator</a> (we recommend the emulator for easy practice).</li>
+                    <li>A <strong>data set</strong> with paired (x, y) values (we’ll use a sample set below if you don’t have your own).</li>
+                    <li>Basic familiarity with the TI-84’s STAT menu (our <a href="./guide.html">TI-84 Guide page</a> has a refresher if you need it).</li>
+                </ol>
+                <p><strong>Sample Data Set (We’ll Use This Throughout):</strong><br>
+                Study time (x, hours) vs. Test score (y, out of 100):</p>
+                <div class="data-table">
+                    <thead>
+                        <tr>
+                            <<th>x (Study Time)</</th>
+                            <<th>y (Test Score)</</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>65</td></tr>
+                        <tr><td>2</td><td>70</td></tr>
+                        <tr><td>3</td><td>78</td></tr>
+                        <tr><td>4</td><td>85</td></tr>
+                        <tr><td>5</td><td>92</td></tr>
+                        <tr><td>6</td><td>95</td></tr>
+                    </tbody>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 1: Input Data into TI-84 Lists</h2>
+                <p>Regression analysis starts with entering your data into the TI-84’s "lists" (spreadsheet-like columns for storing data). Here’s how to do it:</p>
+                <ol>
+                    <li>Press the <strong>STAT</strong> button (located in the top row of the TI-84 keypad).</li>
+                    <li>Select <strong>1:Edit...</strong> and press <strong>ENTER</strong>—you’ll see columns labeled L1, L2, L3, etc.</li>
+                    <li>Clear existing data (if needed):
+                        <ul>
+                            <li>Use the arrow keys to highlight the list name (e.g., L1) at the top of the column.</li>
+                            <li>Press <strong>CLEAR</strong> (not DEL!) and then <strong>ENTER</strong>—this clears the entire list without deleting it.</li>
+                        </ul>
+                    </li>
+                    <li>Enter x-values (study time) into L1:
+                        <ul>
+                            <li>Type the first x-value (1) and press <strong>ENTER</strong>.</li>
+                            <li>Continue entering all x-values (2, 3, 4, 5, 6), pressing ENTER after each.</li>
+                        </ul>
+                    </li>
+                    <li>Use the arrow keys to move to L2 and enter the corresponding y-values (65, 70, 78, 85, 92, 95), pressing ENTER after each.</li>
+                    <li>Press <strong>2nd + MODE</strong> (QUIT) to exit the list editor and return to the home screen.</li>
+                </ol>
+                <div class="note-box">
+                    <h4>Pro Tip for Large Data Sets</h4>
+                    <p>If you have dozens of data points, use the TI-84’s "paste" function or import data from a computer (physical calculator only). For most student projects, manual entry is fast and simple.</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 2: Plot Data to Visualize the Relationship</h2>
+                <p>Before choosing a regression model, always plot your data to see the pattern. This helps you avoid picking the wrong model (e.g., using linear regression for curved data):</p>
+                <ol>
+                    <li>Press <strong>2nd + Y=</strong> (STAT PLOT) to open the plot menu.</li>
+                    <li>Select <strong>1:Plot1...</strong> and press <strong>ENTER</strong>.</li>
+                    <li>Turn Plot1 <strong>ON</strong> (use the arrow keys to highlight "ON" and press ENTER).</li>
+                    <li>Select the <strong>scatter plot icon</strong> (first option under "Type"—looks like dots).</li>
+                    <li>Verify the data source:
+                        <ul>
+                            <li>Xlist: L1 (x-values)</li>
+                            <li>Ylist: L2 (y-values)</li>
+                            <li>Mark: Choose any dot style (we recommend the first option for clarity).</li>
+                        </ul>
+                    </li>
+                    <li>Press <strong>GRAPH</strong>—you’ll see the scatter plot of study time vs. test score. For our sample data, the points form a straight line (perfect for linear regression!).</li>
+                    <li>Use the <strong>ZOOM</strong> button if needed: Select <strong>9:ZoomStat</strong> to auto-adjust the window to fit all data points.</li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 3: Perform Linear Regression (LinReg)</h2>
+                <p>Now we’ll find the linear equation (y = ax + b) that best fits the data. Linear regression is the most common model—we’ll cover quadratic and exponential later:</p>
+                <ol>
+                    <li>Press <strong>STAT</strong> and use the right arrow key to highlight the <strong>CALC</strong> menu.</li>
+                    <li>Select <strong>4:LinReg(ax+b)</strong> and press <strong>ENTER</strong>.</li>
+                    <li>The calculator will prompt you to confirm the data lists (Xlist: L1, Ylist: L2)—press <strong>ENTER</strong> twice to run the regression.</li>
+                    <li>You’ll see the regression results on the home screen (we’ll interpret these next!).</li>
+                </ol>
+                <div class="ti操作-code">
+LinReg(ax+b)
+y = ax + b
+a = 7.142857143
+b = 58.28571429
+r = .9899494937
+r² = .9799999999
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 4: Interpret Regression Results</h2>
+                <p>The TI-84’s regression output includes key metrics—here’s what each one means for our sample data (linear regression):</p>
+                <table class="regression-results-table">
+                    <thead>
+                        <tr>
+                            <<th>Metric</</th>
+                            <<th>Value (Sample Data)</</th>
+                            <<th>Interpretation</</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>a</td>
+                            <td>7.14</td>
+                            <td>Slope of the regression line: For every 1-hour increase in study time, test score increases by ~7.14 points.</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>58.29</td>
+                            <td>Y-intercept: A student who studies 0 hours is predicted to score ~58.29 points.</td>
+                        </tr>
+                        <tr>
+                            <td>r (Correlation Coefficient)</td>
+                            <td>0.99</td>
+                            <td>Measures the strength of the linear relationship: -1 = perfect negative correlation, 1 = perfect positive correlation, 0 = no correlation. Our r = 0.99 means a strong positive linear relationship.</td>
+                        </tr>
+                        <tr>
+                            <td>r² (Coefficient of Determination)</td>
+                            <td>0.98</td>
+                            <td>Percentage of variation in y explained by x: 98% of the variation in test scores is explained by study time—this means the model fits the data extremely well!</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note-box">
+                    <h4>Where’s r and r²? (Common Issue!)</h4>
+                    <p>If r and r² don’t appear in your output, you need to turn on "DiagnosticOn":
+                        <ol>
+                            <li>Press <strong>2nd + 0</strong> (CATALOG) to open the command catalog.</li>
+                            <li>Scroll down to "DiagnosticOn" (use the arrow keys or type "D" with ALPHA).</li>
+                            <li>Press <strong>ENTER twice</strong>—you’ll see "Done" on the home screen.</li>
+                            <li>Rerun the regression (Step 3) to see r and r².</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 5: Plot the Regression Line with Data Points</h2>
+                <p>Visualize how well the regression line fits your data by overlaying it on the scatter plot:</p>
+                <ol>
+                    <li>Press <strong>Y=</strong> to open the function menu.</li>
+                    <li>Clear any existing functions (press CLEAR on each line).</li>
+                    <li>Press <strong>STAT</strong> and use the right arrow key to highlight the <strong>CALC</strong> menu.</li>
+                    <li>Select <strong>4:LinReg(ax+b)</strong> again—but this time, after selecting it, press <strong>VARS</strong>.</li>
+                    <li>Use the right arrow key to highlight <strong>Y-VARS</strong>, select <strong>1:Function</strong>, then <strong>1:Y1</strong>, and press <strong>ENTER</strong>.</li>
+                    <li>Press <strong>ENTER twice</strong> to run the regression and store the equation in Y1.</li>
+                    <li>Press <strong>GRAPH</strong>—you’ll see the scatter plot (data points) and the regression line (straight line) overlaid. For our sample data, the line will almost touch all points (thanks to r² = 0.98!).</li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 6: Make Predictions with the Regression Model</h2>
+                <p>One of the most useful features of regression is predicting unknown y-values. Let’s predict the test score for a student who studies 4.5 hours (our data only goes up to 6 hours):</p>
+                <h3>Method 1: Use the Regression Equation</h3>
+                <ol>
+                    <li>From our results, the equation is y = 7.14x + 58.29.</li>
+                    <li>Plug x = 4.5 into the equation: y = 7.14(4.5) + 58.29 ≈ 32.13 + 58.29 = 90.42.</li>
+                    <li>Predicted test score: ~90 points.</li>
+                </ol>
+                <h3>Method 2: Use the TI-84’s CALC Menu (Faster!)</h3>
+                <ol>
+                    <li>Press <strong>2nd + TRACE</strong> (CALC) to open the calculation menu.</li>
+                    <li>Select <strong>1:value</strong> and press <strong>ENTER</strong>.</li>
+                    <li>When prompted "X=", type 4.5 and press <strong>ENTER</strong>.</li>
+                    <li>The calculator will display "Y=90.428571"—the predicted test score (matches our manual calculation!).</li>
+                </ol>
+                <div class="tip-box">
+                    <h4>Important Prediction Rule</h4>
+                    <p>Only predict x-values within the range of your original data (this is called "interpolation"). Our x-values are 1-6 hours—predicting for 4.5 hours is safe, but predicting for 10 hours (extrapolation) is risky (the relationship might not hold beyond your data).</p>
+                </div>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 7: Quadratic & Exponential Regression (Quick Guide)</h2>
+                <p>For curved data, use quadratic or exponential regression— the process is almost identical to linear regression:</p>
+                <h3>Quadratic Regression (QuadReg)</h3>
+                <ol>
+                    <li>Follow Steps 1-2 (input data + plot scatter plot) to confirm the data is curved (one peak/valley).</li>
+                    <li>Press <strong>STAT → CALC → 5:QuadReg</strong> and press ENTER twice.</li>
+                    <li>Results include a (x² coefficient), b (x coefficient), c (constant), and r² (model fit).</li>
+                    <li>Store the equation in Y1 (as in Step 5) and graph to see the parabola.</li>
+                </ol>
+                <h3>Exponential Regression (ExpReg)</h3>
+                <ol>
+                    <li>Use for growth/decay data (e.g., population = 1000, 2000, 4000, 8000 over time).</li>
+                    <li>Press <strong>STAT → CALC → 0:ExpReg</strong> and press ENTER twice.</li>
+                    <li>Results include a (initial value) and b (growth/decay factor), plus r².</li>
+                    <li>Store in Y1 and graph to see the exponential curve.</li>
+                </ol>
+                <div class="data-table">
+                    <thead>
+                        <tr>
+                            <<th>Regression Type</</th>
+                            <<th>TI-84 CALC Option</</th>
+                            <<th>Key Metric for Fit</</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Linear</td>
+                            <td>4:LinReg(ax+b)</td>
+                            <td>r (closer to ±1 = better fit)</td>
+                        </tr>
+                        <tr>
+                            <td>Quadratic</td>
+                            <td>5:QuadReg</td>
+                            <td>r² (closer to 1 = better fit)</td>
+                        </tr>
+                        <tr>
+                            <td>Exponential</td>
+                            <td>0:ExpReg</td>
+                            <td>r² (closer to 1 = better fit)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Step 8: Validate Model Fit with Residual Graphs</h2>
+                <p>Residuals are the differences between your actual y-values and the predicted y-values (residual = actual y - predicted y). A good model will have residuals randomly scattered around 0—no pattern means the model fits well:</p>
+                <ol>
+                    <li>Run your regression (e.g., LinReg) and store the equation in Y1 (Step 5).</li>
+                    <li>Press <strong>STAT → EDIT</strong> to open the list editor.</li>
+                    <li>Use the arrow keys to highlight the L3 column name and press <strong>ENTER</strong>.</li>
+                    <li>Type <code>L2 - Y1(L2)</code> (actual y - predicted y) and press <strong>ENTER</strong>—L3 will populate with residuals.</li>
+                    <li>Press <strong>2nd + Y=</strong> (STAT PLOT) and select <strong>2:Plot2...</strong>.</li>
+                    <li>Turn Plot2 <strong>ON</strong>, select the scatter plot icon, set Xlist = L1, Ylist = L3, and press <strong>GRAPH</strong>.</li>
+                </ol>
+                <p><strong>How to Interpret Residual Graphs:</strong></p>
+                <ul>
+                    <li>Random scatter (no pattern): Model fits well (our sample data will look like this!).</li>
+                    <li>Curved pattern: Wrong model (e.g., linear regression for quadratic data—switch to QuadReg).</li>
+                    <li>Residuals increasing/decreasing: Model under/overestimates values (check data entry or try a different model).</li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Common Regression Errors & How to Fix Them</h2>
+                <p>Even experienced users run into issues—here’s how to fix the most common regression problems on the TI-84:</p>
+                <ol>
+                    <li>
+                        <strong>"ERR:INVALID DIM" (Invalid Dimension)</strong>:
+                        <ul>
+                            <li>Cause: L1 and L2 have different numbers of data points (e.g., 6 x-values but 5 y-values).</li>
+                            <li>Fix: Go back to STAT → EDIT and ensure both lists have the same number of entries.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>No Regression Results (Blank Screen)</strong>:
+                        <ul>
+                            <li>Cause: Lists are empty or have only one data point (regression needs at least 2 points).</li>
+                            <li>Fix: Add more paired (x, y) values to L1 and L2.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>r and r² Missing from Output</strong>:
+                        <ul>
+                            <li>Cause: Diagnostic mode is off (common default setting).</li>
+                            <li>Fix: Turn on DiagnosticOn (Step 4 note box) and rerun the regression.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Regression Line Doesn’t Appear on Graph</strong>:
+                        <ul>
+                            <li>Cause: The line is outside the graph window or the equation wasn’t stored in Y1.</li>
+                            <li>Fix: Press ZOOM → 9:ZoomStat to auto-adjust the window, or re-store the equation in Y1 (Step 5).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Low r² (Poor Model Fit)</strong>:
+                        <ul>
+                            <li>Cause: Wrong model type or no relationship between x and y.</li>
+                            <li>Fix: Plot the data again and try a different regression model (e.g., exponential instead of linear).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Advanced Regression Tips for TI-84</h2>
+                <p>Once you master the basics, these tips will help you get more from your regression analysis:</p>
+                <ul>
+                    <li><strong>Compare Multiple Models</strong>: Run linear, quadratic, and exponential regression on the same data and compare r²—higher r² means a better fit.</li>
+                    <li><strong>Save Regression Equations</strong>: Store frequently used equations in Y1-Y9 for quick access (Step 5 method works for all models).</li>
+                    <li><strong>Use Logistic Regression for S-Curves</strong>: For data that plateaus (e.g., growth that levels off), use STAT → CALC → B:Logistic.</li>
+                    <li><strong>Print Results (Physical Calculator)</strong>: Connect your TI-84 to a computer and print regression tables for lab reports or homework.</li>
+                    <li><strong>Automate with TI-BASIC</strong>: Write a TI-BASIC program to run regression, plot graphs, and calculate residuals in one step—learn how in our <a href="./ti-basic-programming-first-app.html">TI-BASIC programming guide</a>.</li>
+                </ul>
+            </div>
+
+            <div class="blog-content-block">
+                <h2>Final Thoughts</h2>
+                <p>Statistical regression on the TI-84 Plus CE is a powerful tool that turns raw data into actionable insights—whether you’re analyzing school projects, scientific experiments, or real-world trends. The key to mastery is practice: start with simple linear data, move to curved models, and always validate your results with residual graphs.</p>
+                <p>Remember, regression is about more than just finding an equation—it’s about understanding the relationship between variables and making informed predictions. With the steps in this guide, you’ll be able to perform, interpret, and present regression analysis with confidence—on exams, in labs, or in real life.</p>
+                <p>The best way to learn is to experiment with your own data. Grab a data set (or use our sample), open our <a href="./ti-84-calculator.html">free online TI-84 emulator</a>, and start practicing—you’ll be a regression pro in no time!</p>
+            </div>
+
+            <!-- 博客底部CTA - 引导用户使用在线模拟器/查看博客首页 -->
+            <div class="blog-cta">
+                <h3>Ready to Practice Regression Analysis?</h3>
+                <p>Test linear, quadratic, and exponential regression with our free online TI-84 Plus CE emulator—no hardware required!</p>
+                <div class="blog-cta-buttons">
+                    <a href="./ti-84-calculator.html" class="blog-cta-button cta-primary">Open Online TI-84 Calculator</a>
+                    <a href="./blog.html" class="blog-cta-button cta-secondary">View All Blog Posts</a>
+                </div>
+            </div>
+
+            <!-- 相关文章 - 关联博客系列内容，提升内链权重 -->
+            <div class="related-posts">
+                <h3>Related TI-84 Guides</h3>
+                <div class="related-posts-grid">
+                    <div class="related-post-card">
+                        <img src="blog/ti-basic-programming.jpg" alt="TI-BASIC Programming: Creating Your First Calculator App" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Programming (TI-BASIC)</span>
+                            <h4 class="related-post-title"><a href="./ti-basic-programming-first-app.html">TI-BASIC Programming: Creating Your First Calculator App</a></h4>
+                            <p class="related-post-excerpt">Learn to automate regression and data analysis with TI-BASIC—build custom tools to run stats in one click.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/graphing-parametric.jpg" alt="How to Graph Parametric Equations on TI-84 Plus CE" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Graphing Functions</span>
+                            <h4 class="related-post-title"><a href="./how-to-graph-parametric-equations.html">How to Graph Parametric Equations on TI-84 Plus CE</a></h4>
+                            <p class="related-post-excerpt">Step-by-step guide to setting up, graphing, and analyzing parametric equations on your TI-84 Plus CE.</p>
+                        </div>
+                    </div>
+                    <div class="related-post-card">
+                        <img src="blog/exam-tips.jpg" alt="TI-84 Plus CE Tips for SAT & ACT Exams" class="related-post-img">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Exam Tips</span>
+                            <h4 class="related-post-title"><a href="#">TI-84 Plus CE Tips for SAT & ACT Exams</a></h4>
+                            <p class="related-post-excerpt">Time-saving regression and stats shortcuts for standardized tests—master the functions that boost your score.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 页脚 - 与站点所有页面统一 -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="./ti-84-calculator.html">TI 84 Calculator</a>
+                <a href="./ti-84-plus-ce.html">Graphing Calculator</a>
+                <a href="#">AI Math Solver</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="./guide.html">Guide</a>
+                <a href="./faq.html">FAQ</a>
+                <a href="./blog.html">BLOG</a>
+            </div>
+            <div class="footer-col">
+                <h4>Disclaimer</h4>
+                <p>This is a standalone version of the official TI-84 Plus CE HTML5 emulator from Texas Instruments.</p>
+                <p>The emulator files are downloaded from TestNav, where you can also use it for free.</p>
+                <p style="margin-top: 15px;">TI-84 Plus CE is a trademark of Texas Instruments. This website is not affiliated with or endorsed by Texas Instruments.</p>
+                <p style="margin-top: 15px;"><strong>Open Source:</strong> This project is completely open source and available on GitHub. Feel free to contribute, report issues, or fork the project!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 TI 84 Calculator Online  - Free Graphing Calculator Simulator & Statistical Analysis Guide.
+        </div>
+    </footer>
+
+    <!-- 核心JS - 移动端菜单切换 + 基础交互 -->
+    <script>
+        // 移动端菜单切换（含aria属性优化，提升可访问性）
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            const isExpanded = nav.classList.contains('active');
+            toggle.setAttribute('aria-expanded', isExpanded);
+        }
+
+        // 点击菜单外部关闭移动端菜单
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // 响应式窗口调整 - 大屏自动显示菜单
+        window.addEventListener('resize', function() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.menu-toggle');
+            if (window.innerWidth > 768) {
+                nav.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
